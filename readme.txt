@@ -76,15 +76,15 @@ WooCommerce block widgets:
 - Product search
 - Products by tag
 
-You can check out Block Widgets Monster plugin in action [here](http://demo.rgblab.net/block-widgets-monster)
+You can check out Block Widgets Monster plugin in action [here](http://demo.rgblab.net/block-widgets-monster).
 
-Need help? Have feature request? Visit [support thread](https://wordpress.org/support/plugin/block-widgets-monster)
+Need help? Have feature request? Visit [support thread](https://wordpress.org/support/plugin/block-widgets-monster).
 
-Please consider donating even a small sum via [PayPal](https://www.paypal.me/rgblab)
+Please consider donating even a small sum via [PayPal](https://www.paypal.me/rgblab).
 
 == Installation ==
 
-Install the Block Widgets Monster plugin as any other WordPress plugin. More info can be found in official WordPress step by step guide [here](https://wordpress.org/support/article/managing-plugins/#installing-plugins)
+Install the Block Widgets Monster plugin as any other WordPress plugin. More info can be found in official WordPress step by step guide [here](https://wordpress.org/support/article/managing-plugins/#installing-plugins).
 
 == Frequently Asked Questions ==
 
@@ -103,4 +103,4 @@ You can use official theme unit test data XML file for WordPress, and sample dat
 
 == Upgrade Notice ==
 
-Best practice is to always use latest plugin version
+Best practice is to always use latest plugin version.
