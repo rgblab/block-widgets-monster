@@ -1,69 +1,106 @@
 === Block Widgets Monster ===
 
 Contributors: rgblab
+Donate link: https://www.paypal.me/rgblab
 Tags: widget, theme development, debug
-License: GPLv2 or later
-Requires at least: 3.2.0
-Tested up to: 4.9
+Requires at least: 5.8
+Tested up to: 5.8.1
+Requires PHP: 5.3
 Stable tag: trunk
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Provides a quick and easy method of adding all core widgets to a sidebar for testing purposes.
+Quick and easy testing of multiple WordPress and/or WooCommerce block/legacy widgets. Not intended for production use.
 
 == Description ==
 
-The Monster widget consolidates all 13 core widgets into a single widget enabling theme developers to create multiple instances with ease. It has been created to save time during theme development and review by minimizing the steps needed to populate a sidebar with widgets. The Monster widget is not designed for use in production.
+Block Widgets Monster is a free WordPress plugin that will allow you to test multiple WordPress and/or WooCommerce block/legacy widgets with ease.
 
-== Frequently Asked Questions ==
+Here is a list of supported widgets.
 
-= Why I do not see the Menu widget? =
+WordPress legacy widgets:
 
-The core Menu widget provides an interface that enables you to select a custom menu to display. The Monster widget will attempt to locate the custom menu having the most links on your site. In the event that no menus are registered, a menu widget will not be displayed. Likewise, if all of your custom menus are empty (no links added to them), no menu widget will be displayed.
+- Archives (2 instances - list and dropdown)
+- Calendar
+- Categories (2 instances - list and dropdown)
+- Pages
+- Meta
+- Nav menu
+- Recent comments
+- Recent posts
+- RSS
+- Search
+- Text (with content for theme unit test)
+- Tag cloud
 
-== Screenshots ==
+WordPress block widgets:
 
-1. The Monster widget will appear in your list of available widgets.
-2. Drag it to a widget area to create an instance.
-3. View your site and see that all core widgets are displayed!
+- Archives (2 instances - list and dropdown)
+- Calendar
+- Categories (2 instances - list and dropdown)
+- Latest comments
+- Latest posts
+- Login/out (2 instances - link and form)
+- Page list
+- RSS
+- Social icons
+- Search (5 instances - button inside/outside, button with icon/text, only text field)
+- Tag cloud
 
-== Changelog ==
+WooCommerce legacy widgets:
 
-= v0.3 - January 5th, 2013 =
-* Added test photograph by directly to the plugin. Thanks to [Rarst](http://profiles.wordpress.org/rarst) for the bug report.
-* Add a really long select element to the text widget. See [_s issue #99](https://github.com/Automattic/_s/pull/99).
-* Add a smiley to the image caption.
-* Remove the "pipe test".
-* Bump version number.
-* Update Changelog.
+- Cart
+- Product search
+- Layered nav filter
+- Layered nav (2 instances - list and multiselect dropdown)
+- Price filter
+- Product categories (2 instances - list and dropdown)
+- Product tag cloud
+- All products (3 instances - all, featured, on sale)
+- Recent reviews
+- Recently viewed products
+- Top rated products
 
-= v0.2 - October 18th, 2012 =
-* Create custom cache key for the Recent Posts widget.
-* Only add the Links widget when it has been registered.
-* Bump version number.
-* Update Changelog.
+WooCommerce block widgets:
 
-= v0.1 - May 12th, 2012 =
-* Original Release.
+- Featured category
+- Featured product
+- Hand picked products
+- Best selling products
+- Product categories (2 instances - list and dropdown)
+- Products by category
+- Newest products
+- On sale products
+- Products by attribute
+- Top rated products
+- Product search
+- Products by tag
+
+You can check out Block Widgets Monster plugin in action [here](http://demo.rgblab.net/block-widgets-monster)
+
+Need help? Have feature request? Visit [support thread](https://wordpress.org/support/plugin/block-widgets-monster)
+
+Please consider donating even a small sum via [PayPal](https://www.paypal.me/rgblab)
 
 == Installation ==
 
-This plugin can be installed directly from your site.
-
-1. Log in and navigate to Plugins &rarr; Add New.
-2. Type "Monster Widget" into the Search input and click the "Search Widgets" button.
-3. Locate the Monster Widget in the list of search results and click "Install Now".
-4. Click the "Activate Plugin" link at the bottom of the install screen.
-5. Navigate to Appearance &rarr; Widgets and [create a new instance](http://codex.wordpress.org/WordPress_Widgets#Activate_Widgets).
-
-It can also be installed manually.
-
-1. [Download](http://wordpress.org/extend/plugins/monster-widget/) the plugin from WordPress.org.
-2. Unzip the package and move to your plugins directory.
-3. Log into WordPress and navigate to the "Plugins" screen.
-4. Locate "Monster Widget" in the list and click the "Activate" link.
-5. Navigate to Appearance &rarr; Widgets and [create a new instance](http://codex.wordpress.org/WordPress_Widgets#Activate_Widgets).
+Install the Block Widgets Monster plugin as any other WordPress plugin. More info can be found in official WordPress step by step guide [here](https://wordpress.org/support/article/managing-plugins/#installing-plugins)
 
 == Frequently Asked Questions ==
 
-= Why was the pipe test removed in version 0.3 =
+= I need demo content =
 
-A couple members of the Theme Team at Automattic had a discussion about the relevance of this test and we came to the conclusion that it is rather unnatural. Moving forward it would be best to only include markup and data that best represent actual use cases.
+You can use official theme unit test data XML file for WordPress, and sample data XML file for WooCommerce (shipped with the WooCommerce plugin in sample-data folder).
+
+== Screenshots ==
+
+1. Block Widgets Monster options
+
+== Changelog ==
+
+= 1.0.0 (11. October 2021) =
+* Initial release
+
+== Upgrade Notice ==
+
+Best practice is to always use latest plugin version

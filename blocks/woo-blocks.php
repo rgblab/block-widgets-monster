@@ -1,28 +1,5 @@
 <?php
 
-$woo_blocks_group = array(
-	'blockName'    => 'core/group',
-	'attrs'        => array(),
-	'innerBlocks'  => array(
-		array(
-			'blockName'    => 'core/heading',
-			'innerHTML'    => '',
-			'innerContent' => array(
-				'',
-			),
-		),
-		array(),
-	),
-	'innerHTML'    => '<div class="wp-block-group"></div>',
-	'innerContent' => array(
-		'<div class="wp-block-group">',
-		null,
-		null,
-		'</div>',
-	),
-	'className'    => '',
-);
-
 $woo_blocks_source = array();
 
 // all reviews fixme - multiple objects
@@ -139,7 +116,7 @@ $woo_blocks_source[] = array(
 	'blockHeading' => esc_html__( 'Block Best Selling Products', 'bwm' ),
 );
 
-// product categories list
+// product categories
 $woo_blocks_source[] = array(
 	'blockName'    => 'woocommerce/product-categories',
 	'attrs'        => array(
@@ -152,7 +129,6 @@ $woo_blocks_source[] = array(
 	'className'    => '',
 	'blockHeading' => esc_html__( 'Block Product Categories List', 'bwm' ),
 );
-
 $woo_blocks_source[] = array(
 	'blockName'    => 'woocommerce/product-categories',
 	'attrs'        => array(
@@ -329,18 +305,4 @@ if ( ! empty( $this->woo_product_tag_id ) ) {
 	);
 }
 
-if ( $group ) {
-	$count = 0;
-	foreach ( $woo_blocks_source as $block ) {
-		$woo_blocks[$count] = $woo_blocks_group;
-		// inject title into group
-		$woo_blocks[$count]['innerBlocks'][0]['innerHTML']       = '<h2>' . $block['blockHeading'] . '</h2>';
-		$woo_blocks[$count]['innerBlocks'][0]['innerContent'][0] = '<h2>' . $block['blockHeading'] . '</h2>';
-		// inject block into group
-		$woo_blocks[$count]['innerBlocks'][1] = $block;
-
-		$count ++;
-	}
-} else {
-	$woo_blocks = $woo_blocks_source;
-}
+$woo_blocks = $this->group_blocks( $woo_blocks_source, $group );

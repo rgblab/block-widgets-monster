@@ -40,7 +40,6 @@ $woo_widgets[] = array(
 	),
 	'className'  => 'woocommerce widget_layered_nav woocommerce-widget-layered-nav',
 );
-
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Layered_Nav',
 	'attrs'      => array(
@@ -74,7 +73,6 @@ $woo_widgets[] = array(
 	),
 	'className'  => 'woocommerce widget_product_categories',
 );
-
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Product_Categories',
 	'attrs'      => array(

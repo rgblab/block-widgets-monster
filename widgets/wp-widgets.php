@@ -12,7 +12,7 @@ $wp_widgets[] = array(
 	),
 	'className'  => 'widget_archive',
 );
-array(
+$wp_widgets[] = array(
 	'widgetName' => 'WP_Widget_Archives',
 	'attrs'      => array(
 		'title'    => esc_html__( 'Legacy Archives Dropdown', 'bwm' ),
@@ -42,7 +42,7 @@ $wp_widgets[] = array(
 	),
 	'className'  => 'widget_categories',
 );
-array(
+$wp_widgets[] = array(
 	'widgetName' => 'WP_Widget_Categories',
 	'attrs'      => array(
 		'title'        => esc_html__( 'Legacy Categories Dropdown', 'bwm' ),

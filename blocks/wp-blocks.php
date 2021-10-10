@@ -1,28 +1,5 @@
 <?php
 
-$wp_blocks_group = array(
-	'blockName'    => 'core/group',
-	'attrs'        => array(),
-	'innerBlocks'  => array(
-		array(
-			'blockName'    => 'core/heading',
-			'innerHTML'    => '',
-			'innerContent' => array(
-				'',
-			),
-		),
-		array(),
-	),
-	'innerHTML'    => '<div class="wp-block-group"></div>',
-	'innerContent' => array(
-		'<div class="wp-block-group">',
-		null,
-		null,
-		'</div>',
-	),
-	'className'    => '',
-);
-
 $wp_blocks_source = array();
 
 // archives
@@ -278,18 +255,4 @@ $wp_blocks_source[] = array(
 	'blockHeading' => esc_html__( 'Block Tag Cloud', 'bwm' ),
 );
 
-if ( $group ) {
-	$count = 0;
-	foreach ( $wp_blocks_source as $block ) {
-		$wp_blocks[ $count ] = $wp_blocks_group;
-		// inject title into group
-		$wp_blocks[ $count ]['innerBlocks'][0]['innerHTML']       = '<h2>' . $block['blockHeading'] . '</h2>';
-		$wp_blocks[ $count ]['innerBlocks'][0]['innerContent'][0] = '<h2>' . $block['blockHeading'] . '</h2>';
-		// inject block into group
-		$wp_blocks[ $count ]['innerBlocks'][1] = $block;
-
-		$count ++;
-	}
-} else {
-	$wp_blocks = $wp_blocks_source;
-}
+$wp_blocks = $this->group_blocks( $wp_blocks_source, $group );

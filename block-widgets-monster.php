@@ -5,7 +5,7 @@ Plugin Name: Block Widgets Monster
 Author: RGB Lab
 Author URI: http://rgblab.net/
 Version: 1.0.0
-Description: Quick and easy testing of multiple WordPress and Woocommerce block/legacy widgets. Not intended for production use.
+Description: Quick and easy testing of multiple WordPress and/or WooCommerce block/legacy widgets. Not intended for production use.
 Text Domain: bwm
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,11 +20,11 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 		private static $instance;
 
 		/**
-		 * get instance function
+		 * get instance
 		 *
-		 * get single instance of betterPostFormats class
+		 * get single instance of Block_Widgets_Monster class
 		 *
-		 * @return object betterPostFormats
+		 * @return object Block_Widgets_Monster
 		 */
 		public static function get_instance() {
 			if ( ! ( self::$instance instanceof self ) ) {
@@ -63,7 +63,7 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 
 				// // include backend assets on 'admin_enqueue_scripts' hook
 				// // priority 5 to ensure loading before gutenberg
-				// add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_backend_assets' ), 5 );
+				add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_backend_assets' ), 5 );
 			}
 
 			// textdomain
@@ -71,7 +71,7 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 		}
 
 		/**
-		 * dashboard links function
+		 * set dashboard links
 		 *
 		 * @param array  $links - plugin links from plugin meta
 		 * @param string $file  - name of main plugin file
@@ -100,31 +100,19 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		// public function enqueue_backend_assets( $hook ) {
-		// 	if ( 'post.php' === $hook || 'post-new.php' == $hook ) {
-		// 		$backend_labels = array(
-		// 			'uploaderTitle'      => esc_html__( 'Replace image', 'bpf' ),
-		// 			'uploaderButtonText' => esc_html__( 'Replace image', 'bpf' ),
-		// 		);
-		//
-		// 		wp_register_script( 'bpf-backend', BPF_URL_PATH . 'assets/backend.min.js', array( 'jquery' ), false, true );
-		// 		wp_localize_script( 'bpf-backend', 'backendLabels', $backend_labels );
-		// 		wp_enqueue_script( 'bpf-backend' );
-		// 	}
-		// 	if ( 'edit.php' === $hook || 'post.php' == $hook || 'post-new.php' == $hook ) {
-		// 		wp_enqueue_style( 'bpf-backend', BPF_URL_PATH . 'assets/backend.min.css' );
-		// 	}
-		// }
+		public function enqueue_backend_assets( $hook ) {
+
+			if ( 'widgets.php' === $hook ) {
+				$backend_labels = array(
+					'widgetTitle' => esc_html__( 'Block Widgets Monster', 'bwm' ),
+				);
+
+				wp_register_script( 'bwm-backend', BWM_URL_PATH . 'assets/js/backend.min.js', array( 'jquery' ), false, true );
+				wp_localize_script( 'bwm-backend', 'backendLabels', $backend_labels );
+				wp_enqueue_script( 'bwm-backend' );
+			}
+		}
 	}
 
 	Block_Widgets_Monster::get_instance();
 }
-
-// todo list
-// check js for backend, to hide stupid widget preview
-
-// add comment to every variable and/or method
-
-// configure gulp w/ reduced set of options for js and pot only
-
-// rename checkbox in frontend, add description
