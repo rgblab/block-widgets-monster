@@ -1,15 +1,19 @@
 <?php
 
-/*
-Plugin Name: Block Widgets Monster
-Author: RGB Lab
-Author URI: http://rgblab.net/
-Version: 1.0.0
-Description: Quick and easy testing of multiple WordPress and/or WooCommerce block/legacy widgets. Not intended for production use.
-Text Domain: bwm
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
+/**
+ * Plugin Name: Block Widgets Monster
+ * Plugin URI: http://demo.rgblab.net/block-widgets-monster/
+ * Description: Quick and easy testing of multiple WordPress and/or WooCommerce block/legacy widgets. Not intended for production use.
+ * Version: 1.0.0
+ * Author: RGB Lab
+ * Author URI: http://rgblab.net/
+ * Text Domain: bwm
+ * Domain Path: /languages/
+ * Requires at least: 5.8
+ * Requires PHP: 5.6
+ * License: GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 	/**
