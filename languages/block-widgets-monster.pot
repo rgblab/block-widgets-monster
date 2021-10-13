@@ -13,75 +13,79 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../wp-content/plugins/block-widgets-monster/block-widgets-monster.php:86
+#: ../wp-content/plugins/block-widgets-monster/block-widgets-monster.php:93
 msgid "Docs & Demo"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/block-widgets-monster.php:87
+#: ../wp-content/plugins/block-widgets-monster/block-widgets-monster.php:94
 msgid "Please rate with ★★★★★"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/block-widgets-monster.php:88
+#: ../wp-content/plugins/block-widgets-monster/block-widgets-monster.php:95
 msgid "Donate"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/block-widgets-monster.php:107, ../wp-content/plugins/block-widgets-monster/class-bwm-widget.php:43
+#: ../wp-content/plugins/block-widgets-monster/block-widgets-monster.php:114, ../wp-content/plugins/block-widgets-monster/class-bwm-widget.php:43
 msgid "Block Widgets Monster"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:37, ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:39, ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:68, ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:70
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:20, ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:22, ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:51, ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:53
 msgid "Shop Now"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:48
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:31
 msgid "Block Featured Product Category"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:79
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:62
 msgid "Block Featured Product"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:98
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:81
 msgid "Block Handpicked Product"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:116
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:99
 msgid "Block Best Selling Products"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:130
-msgid "Block Product Categories List"
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:113
+msgid "Block Product Categories List W/ Images"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:143
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:125
+msgid "Block Product Categories List W/O Images"
+msgstr ""
+
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:137
 msgid "Block Product Categories Dropdown"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:162
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:156
 msgid "Block Products By Category"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:180
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:174
 msgid "Block New Products"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:197
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:191
 msgid "Block Products On Sale"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:221
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:215
 msgid "Block Products By Attribute"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:240
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:234
 msgid "Block Top Rated Products"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:286
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:248
 msgid "Block Product Search"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:305
+#: ../wp-content/plugins/block-widgets-monster/blocks/woo-blocks.php:267
 msgid "Block Products By Tag"
 msgstr ""
 
@@ -106,66 +110,74 @@ msgid "Block Categories Dropdown"
 msgstr ""
 
 #: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:65
-msgid "Block Latest Comments"
+msgid "Block Latest Comments W/ Avatar"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:82
-msgid "Block Latest Posts"
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:76
+msgid "Block Latest Comments W/O Avatar"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:93
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:94
+msgid "Block Latest Posts W/ Image"
+msgstr ""
+
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:110
+msgid "Block Latest Posts W/O Image"
+msgstr ""
+
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:121
 msgid "Block Login Link"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:102
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:130
 msgid "Block Login Form"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:111
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:139
 msgid "Block Page List"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:127
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:155
 msgid "Block RSS"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:140, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:148, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:156, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:164
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:168, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:176, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:184, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:192
 msgid "Lorem ipsum dolor sit amet"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:178
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:206
 msgid "Block Social Icons"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:185, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:186, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:198, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:199, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:211, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:212, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:224, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:225, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:237, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:238
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:213, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:214, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:226, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:227, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:239, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:240, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:252, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:253, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:265, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:266
 msgid "Search"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:188, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:201, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:214, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:227, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:240
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:216, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:229, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:242, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:255, ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:268
 msgid "Placeholder"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:193
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:221
 msgid "Block Search Text Button Outside"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:206
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:234
 msgid "Block Search Text Button Inside"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:219
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:247
 msgid "Block No Button"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:232
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:260
 msgid "Block Search Icon Button Outside"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:245
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:273
 msgid "Block Search Icon Button Inside"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:255
+#: ../wp-content/plugins/block-widgets-monster/blocks/wp-blocks.php:283
 msgid "Block Tag Cloud"
 msgstr ""
 
@@ -281,47 +293,47 @@ msgstr ""
 msgid "Legacy Layered Nav List"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:47
+#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:46
 msgid "Legacy Layered Nav Dropdown"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:59
+#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:58
 msgid "Legacy Price Filter"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:68
+#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:67
 msgid "Legacy Product Categories Dropdown"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:81
+#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:79
 msgid "Legacy Product Categories List"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:95
+#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:93
 msgid "Legacy Product Tag Cloud"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:104
+#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:102
 msgid "Legacy All Products"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:117
+#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:115
 msgid "Legacy Featured Products"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:130
+#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:128
 msgid "Legacy Products On-Sale"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:145
+#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:143
 msgid "Legacy Recent Reviews"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:155
+#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:153
 msgid "Legacy Recently Viewed Products"
 msgstr ""
 
-#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:165
+#: ../wp-content/plugins/block-widgets-monster/widgets/woo-widgets.php:163
 msgid "Legacy Top Rated Products"
 msgstr ""
 
