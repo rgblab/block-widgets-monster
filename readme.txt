@@ -44,7 +44,7 @@ WordPress block widgets:
 - Page list
 - RSS
 - Social icons
-- Search (5 instances - button inside/outside, button with icon/text, only text field)
+- Search (5 instances - button inside/outside, button with icon/text and only text field)
 - Tag cloud
 
 WooCommerce legacy widgets:
@@ -56,7 +56,7 @@ WooCommerce legacy widgets:
 - Price filter
 - Product categories (3 instances - list with/without image and dropdown)
 - Product tag cloud
-- All products (3 instances - all, featured, on sale)
+- All products (3 instances - all, featured and on sale)
 - Recent reviews
 - Recently viewed products
 - Top rated products
