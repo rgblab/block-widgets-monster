@@ -62,7 +62,18 @@ $wp_blocks_source[] = array(
 		'displayExcerpt' => true,
 	),
 	'className'    => 'widget_recent_comments',
-	'blockHeading' => esc_html__( 'Block Latest Comments', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Latest Comments W/ Avatar', 'bwm' ),
+);
+$wp_blocks_source[] = array(
+	'blockName'    => 'core/latest-comments',
+	'attrs'        => array(
+		'commentsToShow' => $rows,
+		'displayAvatar'  => false,
+		'displayDate'    => true,
+		'displayExcerpt' => true,
+	),
+	'className'    => 'widget_recent_comments',
+	'blockHeading' => esc_html__( 'Block Latest Comments W/O Avatar', 'bwm' ),
 );
 
 // latest posts
@@ -80,7 +91,23 @@ $wp_blocks_source[] = array(
 		'postsToShow'            => $rows,
 	),
 	'className'    => 'widget_recent_entries',
-	'blockHeading' => esc_html__( 'Block Latest Posts', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Latest Posts W/ Image', 'bwm' ),
+);
+$wp_blocks_source[] = array(
+	'blockName'    => 'core/latest-posts',
+	'attrs'        => array(
+		'displayPostContent'     => true,
+		'excerptLength'          => 35,
+		'displayAuthor'          => true,
+		'displayPostDate'        => true,
+		'postLayout'             => '',
+		'columns'                => '',
+		'displayFeaturedImage'   => false,
+		'addLinkToFeaturedImage' => true,
+		'postsToShow'            => $rows,
+	),
+	'className'    => 'widget_recent_entries',
+	'blockHeading' => esc_html__( 'Block Latest Posts W/O Image', 'bwm' ),
 );
 
 // login/logout

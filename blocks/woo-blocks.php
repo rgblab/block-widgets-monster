@@ -110,13 +110,25 @@ $woo_blocks_source[] = array(
 		'isHierarchical' => true,
 	),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block Product Categories List', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Product Categories List W/ Images', 'bwm' ),
 );
 $woo_blocks_source[] = array(
 	'blockName'    => 'woocommerce/product-categories',
 	'attrs'        => array(
 		'hasCount'       => true,
-		'hasImage'       => true,
+		'hasImage'       => false,
+		'hasEmpty'       => true,
+		'isDropdown'     => false,
+		'isHierarchical' => true,
+	),
+	'className'    => '',
+	'blockHeading' => esc_html__( 'Block Product Categories List W/O Images', 'bwm' ),
+);
+$woo_blocks_source[] = array(
+	'blockName'    => 'woocommerce/product-categories',
+	'attrs'        => array(
+		'hasCount'       => true,
+		'hasImage'       => false,
 		'hasEmpty'       => true,
 		'isDropdown'     => true,
 		'isHierarchical' => true,
@@ -229,7 +241,9 @@ $woo_blocks_source[] = array(
 // product search
 $woo_blocks_source[] = array(
 	'blockName'    => 'woocommerce/product-search',
-	'attrs'        => array(),
+	'attrs'        => array(
+		'hasLabel' => true,
+	),
 	'className'    => '',
 	'blockHeading' => esc_html__( 'Block Product Search', 'bwm' ),
 );

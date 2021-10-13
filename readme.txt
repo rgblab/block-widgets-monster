@@ -38,8 +38,8 @@ WordPress block widgets:
 - Archives (2 instances - list and dropdown)
 - Calendar
 - Categories (2 instances - list and dropdown)
-- Latest comments
-- Latest posts
+- Latest comments (2 instances - list with/without avatar)
+- Latest posts (2 instances - list with/without image)
 - Login/out (2 instances - link and form)
 - Page list
 - RSS
@@ -54,7 +54,7 @@ WooCommerce legacy widgets:
 - Layered nav filter
 - Layered nav (2 instances - list and multiselect dropdown)
 - Price filter
-- Product categories (2 instances - list and dropdown)
+- Product categories (3 instances - list with/without image and dropdown)
 - Product tag cloud
 - All products (3 instances - all, featured, on sale)
 - Recent reviews

@@ -58,6 +58,9 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 			// include constants
 			require_once dirname( __FILE__ ) . '/define.php';
 
+			// include helper
+			require_once BWM_ABS_PATH . '/lib/helper.php';
+
 			// include widget
 			require_once BWM_ABS_PATH . '/class-bwm-widget.php';
 
