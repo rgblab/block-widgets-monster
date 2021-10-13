@@ -98,7 +98,7 @@ You can use official theme unit test data XML file for WordPress, and sample dat
 
 == Changelog ==
 
-= 1.0.0 (11. October 2021) =
+= 1.0.0 (13. October 2021) =
 * Initial release
 
 == Upgrade Notice ==
