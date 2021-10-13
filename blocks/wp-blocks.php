@@ -77,6 +77,7 @@ $wp_blocks_source[] = array(
 		'columns'                => '',
 		'displayFeaturedImage'   => true,
 		'addLinkToFeaturedImage' => true,
+		'postsToShow'            => $rows,
 	),
 	'className'    => 'widget_recent_entries',
 	'blockHeading' => esc_html__( 'Block Latest Posts', 'bwm' ),

@@ -37,7 +37,6 @@ jQuery(
 							if (legacyWidgetsPreviewHolder.length) {
 								widgetsHolder.each(
 									function () {
-
 										var mutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
 
 										// if supported by browser

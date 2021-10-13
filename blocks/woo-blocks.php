@@ -2,24 +2,7 @@
 
 $woo_blocks_source = array();
 
-// all reviews fixme - multiple objects
-// $woo_blocks_source[] = array(
-// 	'blockName' => 'woocommerce/all-reviews',
-// 	'attrs'     => array(
-// 		'imageType'         => 'product',
-// 		'orderby'           => 'highest-rating',
-// 		'reviewsOnLoadMore' => 5,
-// 		'reviewsOnPageLoad' => 5,
-// 		'showReviewDate'    => true,
-// 		'showReviewerName'  => true,
-// 		'showReviewImage'   => true,
-// 		'showReviewRating'  => true,
-// 		'showReviewContent' => true,
-// 		'showProductName'   => true,
-// 	),
-// 	'className' => '',
-//	'blockHeading' => esc_html__( 'Block ', 'bwm' ),
-// ),
+// todo - all reviews
 
 // featured category
 if ( ! empty( $this->woo_product_category_id ) ) {
@@ -239,43 +222,9 @@ $woo_blocks_source[] = array(
 	'blockHeading' => esc_html__( 'Block Top Rated Products', 'bwm' ),
 );
 
-// reviews by product // fixme - multiple objects
-// $woo_blocks_source[] = array(
-// 	'blockName' => 'woocommerce/reviews-by-product',
-// 	'attrs'     => array(
-// 		'imageType'         => 'product',
-// 		'orderby'           => 'highest-rating',
-// 		'reviewsOnLoadMore' => 5,
-// 		'reviewsOnPageLoad' => 5,
-// 		'showReviewDate'    => true,
-// 		'showReviewerName'  => true,
-// 		'showReviewImage'   => true,
-// 		'showReviewRating'  => true,
-// 		'showReviewContent' => true,
-// 		'showProductName'   => true,
-// 	),
-// 	'className' => '',
-//	'blockHeading' => esc_html__( 'Block ', 'bwm' ),
-// );
+// todo - reviews by product
 
-// reviews by category // fixme - multiple objects
-// $woo_blocks_source[] = array(
-// 	'blockName' => 'woocommerce/reviews-by-category',
-// 	'attrs'     => array(
-// 		'imageType'         => 'product',
-// 		'orderby'           => 'highest-rating',
-// 		'reviewsOnLoadMore' => 5,
-// 		'reviewsOnPageLoad' => 5,
-// 		'showReviewDate'    => true,
-// 		'showReviewerName'  => true,
-// 		'showReviewImage'   => true,
-// 		'showReviewRating'  => true,
-// 		'showReviewContent' => true,
-// 		'showProductName'   => true,
-// 	),
-// 	'className' => '',
-//	'blockHeading' => esc_html__( 'Block ', 'bwm' ),
-// );
+// todo - reviews by category
 
 // product search
 $woo_blocks_source[] = array(
