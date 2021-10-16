@@ -99,7 +99,7 @@ You can use official theme unit test data XML file for WordPress, and sample dat
 
 == Changelog ==
 
-= 1.0.1 (16. October 2021)
+= 1.0.1 (16. October 2021) =
 * Added all reviews widget in WooCommerce blocks list
 
 = 1.0.0 (13. October 2021) =
