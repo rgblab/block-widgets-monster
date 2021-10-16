@@ -95,11 +95,13 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 						<option value="legacy" <?php selected( $type, 'legacy' ); ?>><?php echo esc_html__( 'Legacy', 'bwm' ); ?></option>
 					</select>
 				</p>
-				<p>
-					<label for="<?php echo $this->get_field_id( 'cols' ); ?>"><?php echo esc_html__( 'Number of colummns:', 'bwm' ); ?></label>
-					<input id="<?php echo $this->get_field_id( 'cols' ); ?>" name="<?php echo $this->get_field_name( 'cols' ); ?>" type="number" min="1" max="5" value="<?php echo esc_attr( $cols ); ?>">
-					<span class="description"><?php echo esc_html__( 'This option is applied to block widgets only', 'bwm' ); ?></span>
-				</p>
+				<?php if ( $this->is_woo_installed ) : ?>
+					<p>
+						<label for="<?php echo $this->get_field_id( 'cols' ); ?>"><?php echo esc_html__( 'Number of colummns:', 'bwm' ); ?></label>
+						<input id="<?php echo $this->get_field_id( 'cols' ); ?>" name="<?php echo $this->get_field_name( 'cols' ); ?>" type="number" min="1" max="5" value="<?php echo esc_attr( $cols ); ?>">
+						<span class="description"><?php echo esc_html__( 'This option is applied to some WooCommerce block widgets only', 'bwm' ); ?></span>
+					</p>
+				<?php endif; ?>
 				<p>
 					<label for="<?php echo $this->get_field_id( 'rows' ); ?>"><?php echo esc_html__( 'Number of rows:', 'bwm' ); ?></label>
 					<input id="<?php echo $this->get_field_id( 'rows' ); ?>" name="<?php echo $this->get_field_name( 'rows' ); ?>" type="number" min="1" max="5" value="<?php echo esc_attr( $rows ); ?>">
@@ -125,7 +127,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		public function widget( $args, $instance ) {
 			$source = $instance['source'];
 			$type   = $instance['type'];
-			$cols   = $instance['cols'];
+			$cols   = $instance['cols'] ?? '';
 			$rows   = $instance['rows'];
 			$group  = ! empty( $instance['group'] ) ?? $instance['group'];
 

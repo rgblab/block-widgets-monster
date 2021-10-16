@@ -2,7 +2,28 @@
 
 $woo_blocks_source = array();
 
-// todo - all reviews
+// all reviews
+$woo_blocks_source[] = array(
+	'blockName'    => 'woocommerce/all-reviews',
+	'attrs'        => array(
+		'imageType'         => 'product',
+		'orderby'           => 'most-recent',
+		'reviewsOnLoadMore' => $rows,
+		'reviewsOnPageLoad' => $rows,
+		'showReviewDate'    => true,
+		'showReviewerName'  => true,
+		'showReviewImage'   => true,
+		'showReviewRating'  => true,
+		'showReviewContent' => true,
+		'showProductName'   => true,
+	),
+	'innerHTML'    => '<div class="wp-block-woocommerce-all-reviews wc-block-all-reviews has-image has-name has-date has-rating has-content has-product-name" data-image-type="reviewer" data-orderby="most-recent" data-reviews-on-page-load="' . esc_attr( $rows ) . '" data-reviews-on-load-more="' . esc_attr( $rows ) . '" data-show-load-more="true" data-show-orderby="true"></div>',
+	'innerContent' => array(
+		'<div class="wp-block-woocommerce-all-reviews wc-block-all-reviews has-image has-name has-date has-rating has-content has-product-name" data-image-type="reviewer" data-orderby="most-recent" data-reviews-on-page-load="' . esc_attr( $rows ) . '" data-reviews-on-load-more="' . esc_attr( $rows ) . '" data-show-load-more="true" data-show-orderby="true"></div>',
+	),
+	'className'    => '',
+	'blockHeading' => esc_html__( 'Block All Reviews', 'bwm' ),
+);
 
 // featured category
 if ( ! empty( $this->woo_product_category_id ) ) {
@@ -234,9 +255,9 @@ $woo_blocks_source[] = array(
 	'blockHeading' => esc_html__( 'Block Top Rated Products', 'bwm' ),
 );
 
-// todo - reviews by product
+// reviews by product // todo
 
-// todo - reviews by category
+// reviews by category // todo
 
 // product search
 $woo_blocks_source[] = array(

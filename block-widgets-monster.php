@@ -4,7 +4,7 @@
  * Plugin Name: Block Widgets Monster
  * Plugin URI: http://demo.rgblab.net/block-widgets-monster/
  * Description: Quick and easy testing of multiple WordPress and/or WooCommerce block/legacy widgets. Not intended for production use.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: RGB Lab
  * Author URI: http://rgblab.net/
  * Text Domain: bwm
@@ -68,8 +68,8 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 				// show additional links in dashboard on 'plugin_row_meta' hook
 				add_filter( 'plugin_row_meta', array( $this, 'dashboard_links' ), 10, 2 );
 
-				// // include backend assets on 'admin_enqueue_scripts' hook
-				// // priority 5 to ensure loading before gutenberg
+				// include backend assets on 'admin_enqueue_scripts' hook
+				// priority 5 to ensure loading before gutenberg
 				add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_backend_assets' ), 5 );
 			}
 

@@ -6,7 +6,7 @@ Tags: widget, theme development, debug
 Requires at least: 5.8
 Tested up to: 5.8.1
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,6 +63,7 @@ WooCommerce legacy widgets:
 
 WooCommerce block widgets:
 
+- All reviews
 - Featured category
 - Featured product
 - Hand picked products
@@ -97,6 +98,9 @@ You can use official theme unit test data XML file for WordPress, and sample dat
 1. Block Widgets Monster options
 
 == Changelog ==
+
+= 1.0.1 (16. October 2021)
+* Added all reviews widget in WooCommerce blocks list
 
 = 1.0.0 (13. October 2021) =
 * Initial release

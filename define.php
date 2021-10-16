@@ -1,7 +1,7 @@
 <?php
 
 if ( ! defined( 'BWM_VERSION' ) ) {
-	define( 'BWM_VERSION', '1.0.0' );
+	define( 'BWM_VERSION', '1.0.1' );
 }
 
 if ( ! defined( 'BWM_ABS_PATH' ) ) {
