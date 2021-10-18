@@ -91,7 +91,7 @@ Install the Block Widgets Monster plugin as any other WordPress plugin. More inf
 
 = I need demo content =
 
-You can use official theme unit test data XML file for WordPress, and sample data XML file for WooCommerce (shipped with the WooCommerce plugin in sample-data folder).
+You can use official [theme unit test](https://github.com/WPTT/theme-test-data) data XML file for WordPress, and sample data XML file for WooCommerce (shipped with the WooCommerce plugin in sample-data folder).
 
 == Screenshots ==
 
