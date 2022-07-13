@@ -10,16 +10,17 @@ $woo_blocks_source[] = array(
 		'orderby'           => 'most-recent',
 		'reviewsOnLoadMore' => $rows,
 		'reviewsOnPageLoad' => $rows,
-		'showReviewDate'    => true,
-		'showReviewerName'  => true,
-		'showReviewImage'   => true,
-		'showReviewRating'  => true,
-		'showReviewContent' => true,
-		'showProductName'   => true,
+		'showReviewDate'    => true,  // manually add into innerHTML as class name
+		'showReviewerName'  => true,  // manually add into innerHTML as class name
+		'showReviewImage'   => true,  // manually add into innerHTML as class name
+		'showReviewRating'  => true,  // manually add into innerHTML as class name
+		'showReviewContent' => true,  // manually add into innerHTML as class name
+		'showProductName'   => true,  // manually add into innerHTML as class name
 	),
-	'innerHTML'    => '<div class="wp-block-woocommerce-all-reviews wc-block-all-reviews has-image has-name has-date has-rating has-content has-product-name" data-image-type="reviewer" data-orderby="most-recent" data-reviews-on-page-load="' . esc_attr( $rows ) . '" data-reviews-on-load-more="' . esc_attr( $rows ) . '" data-show-load-more="true" data-show-orderby="true"></div>',
+	'innerHTML'    =>
+		'<div class="wp-block-woocommerce-all-reviews wc-block-all-reviews has-image has-name has-date has-rating has-content has-product-name"></div>',
 	'innerContent' => array(
-		'<div class="wp-block-woocommerce-all-reviews wc-block-all-reviews has-image has-name has-date has-rating has-content has-product-name" data-image-type="reviewer" data-orderby="most-recent" data-reviews-on-page-load="' . esc_attr( $rows ) . '" data-reviews-on-load-more="' . esc_attr( $rows ) . '" data-show-load-more="true" data-show-orderby="true"></div>',
+		'<div class="wp-block-woocommerce-all-reviews wc-block-all-reviews has-image has-name has-date has-rating has-content has-product-name"></div>',
 	),
 	'className'    => '',
 	'blockHeading' => esc_html__( 'Block All Reviews', 'bwm' ),
@@ -38,9 +39,14 @@ if ( ! empty( $this->woo_product_category_id ) ) {
 				'attrs'        => array(
 					'align' => 'center',
 				),
-				'innerHTML'    => '<div class="wp-block-button aligncenter"><a class="wp-block-button__link" href="' . get_term_link( $this->woo_product_category_id ) . '">' . esc_html__( 'Shop Now', 'bwm' ) . '</a></div>',
+				'innerHTML'    =>
+					'<div class="wp-block-button aligncenter">
+						<a class="wp-block-button__link" href="' . esc_url( get_term_link( $this->woo_product_category_id ) ) . '">' . esc_html__( 'Shop Now', 'bwm' ) . '</a>
+					</div>',
 				'innerContent' => array(
-					'<div class="wp-block-button aligncenter"><a class="wp-block-button__link" href="' . get_term_link( $this->woo_product_category_id ) . '">' . esc_html__( 'Shop Now', 'bwm' ) . '</a></div>',
+					'<div class="wp-block-button aligncenter">
+						<a class="wp-block-button__link" href="' . esc_url( get_term_link( $this->woo_product_category_id ) ) . '">' . esc_html__( 'Shop Now', 'bwm' ) . '</a>
+					</div>',
 				),
 			),
 		),
@@ -49,7 +55,7 @@ if ( ! empty( $this->woo_product_category_id ) ) {
 			null,
 		),
 		'className'    => '',
-		'blockHeading' => esc_html__( 'Block Featured Product Category', 'bwm' ),
+		'blockHeading' => esc_html__( 'Block Featured Category', 'bwm' ),
 	);
 }
 
@@ -69,9 +75,14 @@ if ( ! empty( $this->woo_product_id ) ) {
 				'attrs'        => array(
 					'align' => 'center',
 				),
-				'innerHTML'    => '<div class="wp-block-button aligncenter"><a class="wp-block-button__link" href="' . get_permalink( $this->woo_product_id ) . '">' . esc_html__( 'Shop Now', 'bwm' ) . '</a></div>',
+				'innerHTML'    =>
+					'<div class="wp-block-button aligncenter">
+						<a class="wp-block-button__link" href="' . esc_url( get_permalink( $this->woo_product_id ) ) . '">' . esc_html__( 'Shop Now', 'bwm' ) . '</a>
+					</div>',
 				'innerContent' => array(
-					'<div class="wp-block-button aligncenter"><a class="wp-block-button__link" href="' . get_permalink( $this->woo_product_id ) . '">' . esc_html__( 'Shop Now', 'bwm' ) . '</a></div>',
+					'<div class="wp-block-button aligncenter">
+						<a class="wp-block-button__link" href="' . esc_url( get_permalink( $this->woo_product_id ) ) . '">' . esc_html__( 'Shop Now', 'bwm' ) . '</a>
+					</div>',
 				),
 			),
 		),
@@ -84,7 +95,7 @@ if ( ! empty( $this->woo_product_id ) ) {
 	);
 }
 
-// hand picked products
+// hand-picked products
 if ( ! empty( $this->woo_product_id ) ) {
 	$woo_blocks_source[] = array(
 		'blockName'    => 'woocommerce/handpicked-products',
@@ -99,7 +110,7 @@ if ( ! empty( $this->woo_product_id ) ) {
 			'products'          => array( $this->woo_product_id ),
 		),
 		'className'    => '',
-		'blockHeading' => esc_html__( 'Block Handpicked Product', 'bwm' ),
+		'blockHeading' => esc_html__( 'Block Hand-picked Product', 'bwm' ),
 	);
 }
 
@@ -120,7 +131,7 @@ $woo_blocks_source[] = array(
 	'blockHeading' => esc_html__( 'Block Best Selling Products', 'bwm' ),
 );
 
-// product categories
+// product categories list
 $woo_blocks_source[] = array(
 	'blockName'    => 'woocommerce/product-categories',
 	'attrs'        => array(
@@ -288,5 +299,79 @@ if ( ! empty( $this->woo_product_tag_id ) ) {
 		'blockHeading' => esc_html__( 'Block Products By Tag', 'bwm' ),
 	);
 }
+
+// filter products by price
+$woo_blocks_source[] = array(
+	'blockName'    => 'woocommerce/price-filter',
+	'attrs'        => array(
+		'showInputFields'  => true, // manually add into innerHTML as data attr
+		'showFilterButton' => true, // manually add into innerHTML as data attr
+		'heading'          => esc_html__( 'Filter By Price', 'bwm' ),
+		'headingLevel'     => 3,
+	),
+	'innerHTML'    =>
+		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="true" data-showfilterbutton="true">
+			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
+		</div>',
+	'innerContent' => array(
+		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="true" data-showfilterbutton="true">
+			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
+		</div>',
+	),
+	'className'    => '',
+	'blockHeading' => esc_html__( 'Block Filter Products By Price', 'bwm' ),
+);
+$woo_blocks_source[] = array(
+	'blockName'    => 'woocommerce/price-filter',
+	'attrs'        => array(
+		'showInputFields'  => false, // manually add into innerHTML as data attr
+		'showFilterButton' => true, // manually add into innerHTML as data attr
+		'heading'          => esc_html__( 'Filter By Price', 'bwm' ),
+		'headingLevel'     => 3,
+	),
+	'innerHTML'    =>
+		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="false" data-showfilterbutton="true">
+			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
+		</div>',
+	'innerContent' => array(
+		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="false" data-showfilterbutton="true">
+			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
+		</div>',
+	),
+	'className'    => '',
+	'blockHeading' => esc_html__( 'Block Filter Products By Price', 'bwm' ),
+);
+
+// filter products by attribute // todo
+
+// filter products by stock // todo
+$woo_blocks_source[] = array(
+	'blockName'    => 'woocommerce/stock-filter',
+	'attrs'        => array(
+		'showCounts'       => true,
+		'showFilterButton' => true,
+		'heading'          => esc_html__( 'Filter By Stock Status', 'bwm' ),
+		'headingLevel'     => 3,
+	),
+	'innerHTML'    =>
+		'<div class="wp-block-woocommerce-stock-filter"></div>',
+	'innerContent' => array(
+		'<div class="wp-block-woocommerce-stock-filter"></div>',
+	),
+	'className'    => '',
+	'blockHeading' => esc_html__( 'Block Filter Products By Stock', 'bwm' ),
+);
+
+// active product filters // todo
+
+// mini cart
+$woo_blocks_source[] = array(
+	'blockName'    => 'woocommerce/mini-cart',
+	'attrs'        => array(),
+	'innerHTML'    => '',
+	'innerContent' => array(),
+	'className'    => '',
+	'blockHeading' => esc_html__( 'Block Mini Cart', 'bwm' ),
+);
 
 $woo_blocks = $this->group_blocks( $woo_blocks_source, $group );

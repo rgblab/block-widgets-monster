@@ -4,9 +4,9 @@ Contributors: rgblab
 Donate link: https://www.paypal.me/rgblab/
 Tags: widget, theme development, debug, woocommerce widget bundle, monster widget, woocommerce monster widget, widget, widget bundle
 Requires at least: 5.8
-Tested up to: 6.0
+Tested up to: 6.0.1
 Requires PHP: 5.6
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,7 +54,7 @@ WooCommerce legacy widgets:
 - Layered nav filter
 - Layered nav (2 instances - list and multiselect dropdown)
 - Price filter
-- Product categories (3 instances - list with/without image and dropdown)
+- Product categories (2 instances - list and dropdown)
 - Product tag cloud
 - All products (3 instances - all, featured and on sale)
 - Recent reviews
@@ -68,7 +68,7 @@ WooCommerce block widgets:
 - Featured product
 - Hand picked products
 - Best selling products
-- Product categories (2 instances - list and dropdown)
+- Product categories (3 instances - list with/without image and dropdown)
 - Products by category
 - Newest products
 - On sale products
@@ -76,6 +76,9 @@ WooCommerce block widgets:
 - Top rated products
 - Product search
 - Products by tag
+- Filter products by price (2 instances - editable and regular price values)
+- Filter products by stock
+- Mini cart
 
 You can check out Block Widgets Monster plugin in action [here](http://demo.rgblab.net/block-widgets-monster).
 
@@ -98,6 +101,9 @@ You can use official [theme unit test](https://github.com/WPTT/theme-test-data) 
 1. Block Widgets Monster options
 
 == Changelog ==
+
+= 1.0.2 (13. July 2022) =
+* Added filter products by price, filter products by stock and mini cart widges in WooCommerce blocks list
 
 = 1.0.1 (16. October 2021) =
 * Added all reviews widget in WooCommerce blocks list
