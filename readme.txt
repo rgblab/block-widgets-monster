@@ -4,9 +4,9 @@ Contributors: rgblab
 Donate link: https://www.paypal.me/rgblab/
 Tags: widget, theme development, debug, woocommerce widget bundle, monster widget, woocommerce monster widget, widget, widget bundle
 Requires at least: 5.8
-Tested up to: 6.0.1
+Tested up to: 6.1.1
 Requires PHP: 5.6
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,6 +101,9 @@ You can use official [theme unit test](https://github.com/WPTT/theme-test-data) 
 1. Block Widgets Monster options
 
 == Changelog ==
+
+= 1.0.3 (9. February 2023) =
+* Improved WooCommerce product search and price filter block widgets
 
 = 1.0.2 (13. July 2022) =
 * Added filter products by price, filter products by stock and mini cart widges in WooCommerce blocks list

@@ -272,13 +272,93 @@ $woo_blocks_source[] = array(
 
 // product search
 $woo_blocks_source[] = array(
-	'blockName'    => 'woocommerce/product-search',
+	'blockName'    => 'core/search',
 	'attrs'        => array(
-		'hasLabel' => true,
+		'label'          => esc_html__( 'Search', 'bwm' ),
+		'buttonText'     => esc_html__( 'Search', 'bwm' ),
+		'showLabel'      => true,
+		'placeholder'    => esc_html__( 'Placeholder', 'bwm' ),
+		'buttonPosition' => 'button-outside',
+		'buttonUseIcon'  => false,
+		'query'          => array(
+			'post_type' => 'product',
+		),
 	),
-	'className'    => '',
-	'blockHeading' => esc_html__( 'Block Product Search', 'bwm' ),
+	'className'    => 'widget_search',
+	'blockHeading' => esc_html__( 'Block Product Search Text Button Outside', 'bwm' ),
 );
+$woo_blocks_source[] = array(
+	'blockName'    => 'core/search',
+	'attrs'        => array(
+		'label'          => esc_html__( 'Search', 'bwm' ),
+		'buttonText'     => esc_html__( 'Search', 'bwm' ),
+		'showLabel'      => true,
+		'placeholder'    => esc_html__( 'Placeholder', 'bwm' ),
+		'buttonPosition' => 'button-inside',
+		'buttonUseIcon'  => false,
+		'query'          => array(
+			'post_type' => 'product',
+		),
+	),
+	'className'    => 'widget_search',
+	'blockHeading' => esc_html__( 'Block Product Search Text Button Inside', 'bwm' ),
+);
+$woo_blocks_source[] = array(
+	'blockName'    => 'core/search',
+	'attrs'        => array(
+		'label'          => esc_html__( 'Search', 'bwm' ),
+		'buttonText'     => esc_html__( 'Search', 'bwm' ),
+		'showLabel'      => true,
+		'placeholder'    => esc_html__( 'Placeholder', 'bwm' ),
+		'buttonPosition' => 'no-button',
+		'buttonUseIcon'  => false,
+		'query'          => array(
+			'post_type' => 'product',
+		),
+	),
+	'className'    => 'widget_search',
+	'blockHeading' => esc_html__( 'Block Product Search No Button', 'bwm' ),
+);
+$woo_blocks_source[] = array(
+	'blockName'    => 'core/search',
+	'attrs'        => array(
+		'label'          => esc_html__( 'Search', 'bwm' ),
+		'buttonText'     => esc_html__( 'Search', 'bwm' ),
+		'showLabel'      => true,
+		'placeholder'    => esc_html__( 'Placeholder', 'bwm' ),
+		'buttonPosition' => 'button-outside',
+		'buttonUseIcon'  => true,
+		'query'          => array(
+			'post_type' => 'product',
+		),
+	),
+	'className'    => 'widget_search',
+	'blockHeading' => esc_html__( 'Block Product Search Icon Button Outside', 'bwm' ),
+);
+$woo_blocks_source[] = array(
+	'blockName'    => 'core/search',
+	'attrs'        => array(
+		'label'          => esc_html__( 'Search', 'bwm' ),
+		'buttonText'     => esc_html__( 'Search', 'bwm' ),
+		'showLabel'      => true,
+		'placeholder'    => esc_html__( 'Placeholder', 'bwm' ),
+		'buttonPosition' => 'button-inside',
+		'buttonUseIcon'  => true,
+		'query'          => array(
+			'post_type' => 'product',
+		),
+	),
+	'className'    => 'widget_search',
+	'blockHeading' => esc_html__( 'Block Search Icon Button Inside', 'bwm' ),
+);
+// $woo_blocks_source[] = array(
+// 	'blockName'    => 'woocommerce/product-search',
+// 	'attrs'        => array(
+// 		'hasLabel' => true,
+// 	),
+// 	'className'    => '',
+// 	'blockHeading' => esc_html__( 'Block Product Search', 'bwm' ),
+// );
 
 // products by tag
 if ( ! empty( $this->woo_product_tag_id ) ) {
@@ -302,49 +382,121 @@ if ( ! empty( $this->woo_product_tag_id ) ) {
 
 // filter products by price
 $woo_blocks_source[] = array(
-	'blockName'    => 'woocommerce/price-filter',
+	'blockName'    => 'woocommerce/filter-wrapper',
 	'attrs'        => array(
-		'showInputFields'  => true, // manually add into innerHTML as data attr
-		'showFilterButton' => true, // manually add into innerHTML as data attr
-		'heading'          => esc_html__( 'Filter By Price', 'bwm' ),
-		'headingLevel'     => 3,
+		'filterType' => 'price-filter',
+	),
+	'innerBlocks'  => array(
+		array(
+			'blockName'    => 'woocommerce/price-filter',
+			'attrs'        => array(
+				'showInputFields'  => true,
+				'showFilterButton' => true,
+				'heading'          => esc_html__( 'Filter By Price', 'bwm' ),
+				'headingLevel'     => 3,
+			),
+			'innerHTML'    =>
+				'<div class="wp-block-woocommerce-price-filter">
+					<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
+				</div>',
+			'innerContent' => array(
+				'<div class="wp-block-woocommerce-price-filter">
+					<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
+				</div>',
+			),
+		),
 	),
 	'innerHTML'    =>
-		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="true" data-showfilterbutton="true">
-			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
+		'<div class="wp-block-woocommerce-filter-wrapper">
 		</div>',
 	'innerContent' => array(
-		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="true" data-showfilterbutton="true">
-			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
-		</div>',
+		'<div class="wp-block-woocommerce-filter-wrapper">',
+		null,
+		'</div>',
 	),
 	'className'    => '',
 	'blockHeading' => esc_html__( 'Block Filter Products By Price', 'bwm' ),
 );
+// $woo_blocks_source[] = array(
+// 	'blockName'    => 'woocommerce/price-filter',
+// 	'attrs'        => array(
+// 		'showInputFields'  => true, // manually add into innerHTML as data attr
+// 		'showFilterButton' => true, // manually add into innerHTML as data attr
+// 		'heading'          => esc_html__( 'Filter By Price', 'bwm' ),
+// 		'headingLevel'     => 3,
+// 	),
+// 	'innerHTML'    =>
+// 		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="true" data-showfilterbutton="true">
+// 			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
+// 		</div>',
+// 	'innerContent' => array(
+// 		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="true" data-showfilterbutton="true">
+// 			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
+// 		</div>',
+// 	),
+// 	'className'    => '',
+// 	'blockHeading' => esc_html__( 'Block Filter Products By Price', 'bwm' ),
+// );
 $woo_blocks_source[] = array(
-	'blockName'    => 'woocommerce/price-filter',
+	'blockName'    => 'woocommerce/filter-wrapper',
 	'attrs'        => array(
-		'showInputFields'  => false, // manually add into innerHTML as data attr
-		'showFilterButton' => true, // manually add into innerHTML as data attr
-		'heading'          => esc_html__( 'Filter By Price', 'bwm' ),
-		'headingLevel'     => 3,
+		'filterType' => 'price-filter',
+	),
+	'innerBlocks'  => array(
+		array(
+			'blockName'    => 'woocommerce/price-filter',
+			'attrs'        => array(
+				'showInputFields'  => false,
+				'showFilterButton' => true,
+				'heading'          => esc_html__( 'Filter By Price', 'bwm' ),
+				'headingLevel'     => 3,
+			),
+			'innerHTML'    =>
+				'<div class="wp-block-woocommerce-price-filter">
+					<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
+				</div>',
+			'innerContent' => array(
+				'<div class="wp-block-woocommerce-price-filter">
+					<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
+				</div>',
+			),
+		),
 	),
 	'innerHTML'    =>
-		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="false" data-showfilterbutton="true">
-			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
+		'<div class="wp-block-woocommerce-filter-wrapper">
 		</div>',
 	'innerContent' => array(
-		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="false" data-showfilterbutton="true">
-			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
-		</div>',
+		'<div class="wp-block-woocommerce-filter-wrapper">',
+		null,
+		'</div>',
 	),
 	'className'    => '',
 	'blockHeading' => esc_html__( 'Block Filter Products By Price', 'bwm' ),
 );
+// $woo_blocks_source[] = array(
+// 	'blockName'    => 'woocommerce/price-filter',
+// 	'attrs'        => array(
+// 		'showInputFields'  => false, // manually add into innerHTML as data attr
+// 		'showFilterButton' => true, // manually add into innerHTML as data attr
+// 		'heading'          => esc_html__( 'Filter By Price', 'bwm' ),
+// 		'headingLevel'     => 3,
+// 	),
+// 	'innerHTML'    =>
+// 		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="false" data-showfilterbutton="true">
+// 			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
+// 		</div>',
+// 	'innerContent' => array(
+// 		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="false" data-showfilterbutton="true">
+// 			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
+// 		</div>',
+// 	),
+// 	'className'    => '',
+// 	'blockHeading' => esc_html__( 'Block Filter Products By Price', 'bwm' ),
+// );
 
 // filter products by attribute // todo
 
-// filter products by stock // todo
+// filter products by stock
 $woo_blocks_source[] = array(
 	'blockName'    => 'woocommerce/stock-filter',
 	'attrs'        => array(

@@ -244,7 +244,7 @@ $wp_blocks_source[] = array(
 		'buttonUseIcon'  => false,
 	),
 	'className'    => 'widget_search',
-	'blockHeading' => esc_html__( 'Block No Button', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Search No Button', 'bwm' ),
 );
 $wp_blocks_source[] = array(
 	'blockName'    => 'core/search',
