@@ -74,7 +74,7 @@ WooCommerce block widgets:
 - On sale products
 - Products by attribute
 - Top rated products
-- Product search
+- Product search (5 instances - button inside/outside, button with icon/text and only text field)
 - Products by tag
 - Filter products by price (2 instances - editable and regular price values)
 - Filter products by stock
