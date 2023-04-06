@@ -106,10 +106,9 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 					<label for="<?php echo $this->get_field_id( 'rows' ); ?>"><?php echo esc_html__( 'Number of rows:', 'bwm' ); ?></label>
 					<input id="<?php echo $this->get_field_id( 'rows' ); ?>" name="<?php echo $this->get_field_name( 'rows' ); ?>" type="number" min="1" max="5" value="<?php echo esc_attr( $rows ); ?>">
 				</p>
-				<p>
+				<p style="display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 11px;">
 					<label for="<?php echo $this->get_field_id( 'group' ); ?>"><?php echo esc_html__( 'Show title before block widgets:', 'bwm' ); ?></label>
 					<input <?php checked( $group, 'yes' ); ?> id="<?php echo $this->get_field_id( 'group' ); ?>" name="<?php echo $this->get_field_name( 'group' ); ?>" type="checkbox" value="yes">
-					<br>
 					<span class="description"><?php echo esc_html__( 'Enabling this option will output block heading with h2 tag and particular block widget as a grouped element, as seen in default sidebar content', 'bwm' ); ?></span>
 				</p>
 			</div>
