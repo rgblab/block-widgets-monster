@@ -4,7 +4,7 @@ Contributors: rgblab
 Donate link: https://www.paypal.me/rgblab/
 Tags: widget, theme development, debug, woocommerce widget bundle, monster widget, woocommerce monster widget, widget, widget bundle
 Requires at least: 5.8
-Tested up to: 6.3
+Tested up to: 6.7.2
 Requires PHP: 5.6
 Stable tag: 1.0.4
 License: GPLv2 or later
