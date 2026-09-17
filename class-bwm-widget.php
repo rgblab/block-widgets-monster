@@ -8,7 +8,7 @@ if ( ! function_exists( 'bwm_register_widget' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function bwm_register_widget() {
+	function bwm_register_widget(): void {
 		register_widget( 'BWM_Widget' );
 	}
 
@@ -21,15 +21,23 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 	 */
 	class BWM_Widget extends WP_Widget {
 		// wp vars
+		/** @var string */
 		public $wp_html;
+		/** @var WP_Term|null */
 		public $wp_menu;
 
 		// woo vars
+		/** @var bool */
 		public $is_woo_installed;
+		/** @var int|null */
 		public $woo_product_id;
+		/** @var int|null */
 		public $woo_product_category_id;
+		/** @var int|null */
 		public $woo_product_tag_id;
+		/** @var string|null */
 		public $woo_taxonomy;
+		/** @var int|null */
 		public $woo_term_id;
 
 		/**
@@ -65,9 +73,12 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 *
 		 * @param array $instance - widget instance
 		 *
+		 * param types are omitted, WP_Widget declares this method untyped and
+		 * narrowing a parent's signature is a fatal error
+		 *
 		 * @since 1.0.0
 		 */
-		public function form( $instance ) {
+		public function form( $instance ): void {
 			$source = $instance['source'] ?? 'all';
 			$type   = $instance['type'] ?? 'all';
 			$cols   = $instance['cols'] ?? 1;
@@ -121,14 +132,19 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 * @param array $args     - dynamic sidebar args
 		 * @param array $instance - widget instance
 		 *
+		 * param types are omitted, WP_Widget declares this method untyped and
+		 * narrowing a parent's signature is a fatal error
+		 *
 		 * @since 1.0.0
 		 */
-		public function widget( $args, $instance ) {
-			$source = $instance['source'];
-			$type   = $instance['type'];
-			$cols   = $instance['cols'] ?? '';
-			$rows   = $instance['rows'];
-			$group  = ! empty( $instance['group'] ) ?? $instance['group'];
+		public function widget( $args, $instance ): void {
+			// an instance saved before an option existed has no key for it, and
+			// 'update' only stores the keys that were filled in, so default them all
+			$source = $instance['source'] ?? 'all';
+			$type   = $instance['type'] ?? 'all';
+			$cols   = (int) ( $instance['cols'] ?? 1 );
+			$rows   = (int) ( $instance['rows'] ?? 3 );
+			$group  = ! empty( $instance['group'] );
 
 			if ( 'all' === $type || 'block' === $type ) {
 				$blocks = $this->get_blocks( $source, $cols, $rows, $group );
@@ -170,9 +186,12 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 *
 		 * @return array
 		 *
+		 * param types are omitted, WP_Widget declares this method untyped and
+		 * narrowing a parent's signature is a fatal error
+		 *
 		 * @since 1.0.0
 		 */
-		public function update( $new_instance, $old_instance ) {
+		public function update( $new_instance, $old_instance ): array {
 			$instance = array();
 
 			if ( ! empty( $new_instance['source'] ) ) {
@@ -206,7 +225,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function get_blocks( $source, $cols, $rows, $group ) {
+		public function get_blocks( string $source, int $cols, int $rows, bool $group ): array {
 			$blocks = array();
 
 			include BWM_ABS_PATH . '/blocks/wp-blocks.php';
@@ -237,7 +256,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function get_widgets( $source, $rows ) {
+		public function get_widgets( string $source, int $rows ): array {
 			$widgets = array();
 
 			include BWM_ABS_PATH . '/widgets/wp-widgets.php';
@@ -268,7 +287,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function get_before_widget( $before_widget, $classes ) {
+		public function get_before_widget( string $before_widget, array $classes ): string {
 			// replace class
 			$class     = implode( ' ', $classes );
 			$has_class = false;
@@ -331,13 +350,13 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function get_wp_html() {
+		public function get_wp_html(): string {
 			$html = array();
 
 			$html[] = '<strong>' . esc_html__( 'Large image: Hand Coded', 'bwm' ) . '</strong>';
-			$html[] = '<img src="' . esc_url( BWM_URL_PATH . '/assets/images/bikes.jpg' ) . '" alt="">';
+			$html[] = '<img src="' . esc_url( BWM_URL_PATH . 'assets/images/bikes.jpg' ) . '" alt="">';
 			$html[] = '<strong>' . esc_html__( 'Large image: linked in a caption', 'bwm' ) . '</strong>';
-			$html[] = '<div class="wp-caption alignnone"><a href="#"><img src="' . esc_url( BWM_URL_PATH . '/assets/images/bikes.jpg' ) . '" class="size-large" height="720" width="960" alt=""></a><p class="wp-caption-text">' . __( 'This image is 960 by 720 pixels.', 'bwm' ) . ' ' . convert_smilies( ':)' ) . '</p></div>';
+			$html[] = '<div class="wp-caption alignnone"><a href="#"><img src="' . esc_url( BWM_URL_PATH . 'assets/images/bikes.jpg' ) . '" class="size-large" height="720" width="960" alt=""></a><p class="wp-caption-text">' . __( 'This image is 960 by 720 pixels.', 'bwm' ) . ' ' . convert_smilies( ':)' ) . '</p></div>';
 			$html[] = '<strong>' . esc_html__( 'Meat!', 'bwm' ) . '</strong>';
 			$html[] = esc_html__( 'Hamburger fatback andouille, ball tip bacon t-bone turkey tenderloin. Ball tip shank pig, t-bone turducken prosciutto ground round rump bacon pork chop short loin turkey. Pancetta ball tip salami, hamburger t-bone capicola turkey ham hock pork belly tri-tip. Biltong bresaola tail, shoulder sausage turkey cow pork chop fatback. Turkey pork pig bacon short loin meatloaf, chicken ham hock flank andouille tenderloin shank rump filet mignon. Shoulder frankfurter shankle pancetta. Jowl andouille short ribs swine venison, pork loin pork chop meatball jerky filet mignon shoulder tenderloin chicken pork.', 'bwm' );
 			$html[] = '<strong>' . esc_html__( 'Smile!', 'bwm' ) . '</strong>';
@@ -359,15 +378,15 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		/**
 		 * get longest nav menu
 		 *
-		 * @return false|WP_Term|null
+		 * @return WP_Term|null
 		 *
 		 * @since 1.0.0
 		 */
-		public function get_wp_menu() {
+		public function get_wp_menu(): ?WP_Term {
 			$menus = wp_get_nav_menus();
 
 			if ( is_wp_error( $menus ) || empty( $menus ) ) {
-				return false;
+				return null;
 			}
 
 			$counts = wp_list_pluck( $menus, 'count' );
@@ -378,7 +397,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 			$menu  = array_shift( $menus );
 
 			if ( empty( $menu->count ) ) {
-				return false;
+				return null;
 			}
 
 			return $menu;
@@ -389,7 +408,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function get_woo_product_id() {
+		public function get_woo_product_id(): void {
 			$args = array(
 				'post_type'      => 'product',
 				'orderby'        => 'name',
@@ -408,7 +427,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function get_woo_product_category_id() {
+		public function get_woo_product_category_id(): void {
 			$args = array(
 				'taxonomy' => 'product_cat',
 				'orderby'  => 'name',
@@ -428,7 +447,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function get_woo_product_tag_id() {
+		public function get_woo_product_tag_id(): void {
 			$args = array(
 				'taxonomy' => 'product_tag',
 				'orderby'  => 'name',
@@ -448,7 +467,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function get_woo_taxonomy_attrs() {
+		public function get_woo_taxonomy_attrs(): void {
 			global $wpdb;
 
 			// get term taxonomy id
@@ -470,7 +489,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function group_blocks( $blocks, $group ) {
+		public function group_blocks( array $blocks, bool $group ): array {
 			$grouped_blocks = array();
 			$blocks_group   = array(
 				'blockName'    => 'core/group',

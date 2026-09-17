@@ -1,0 +1,15 @@
+{
+	"name": "block-widgets-monster",
+	"version": "1.0.5",
+	"description": "Build tooling for the Block Widgets Monster WordPress plugin.",
+	"private": true,
+	"type": "module",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"build": "vite build",
+		"watch": "vite build --watch"
+	},
+	"devDependencies": {
+		"vite": "^7.0.0"
+	}
+}

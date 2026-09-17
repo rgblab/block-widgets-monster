@@ -8,7 +8,7 @@ if ( ! function_exists( 'bwm_var_dump' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function bwm_var_dump( $data ) {
+	function bwm_var_dump( $data ): void {
 		echo '<pre>';
 		var_dump( $data );
 		echo '</pre>';

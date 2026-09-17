@@ -4,13 +4,13 @@
  * Plugin Name: Block Widgets Monster
  * Plugin URI: http://demo.rgblab.net/block-widgets-monster/
  * Description: Quick and easy testing of multiple WordPress and/or WooCommerce block/legacy widgets. Not intended for production use.
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: RGB Lab
  * Author URI: http://rgblab.net/
  * Text Domain: bwm
  * Domain Path: /languages/
  * Requires at least: 5.8
- * Requires PHP: 5.6
+ * Requires PHP: 7.2
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -21,6 +21,7 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 	 */
 	class Block_Widgets_Monster {
 		// instance var
+		/** @var self|null */
 		private static $instance;
 
 		/**
@@ -28,9 +29,9 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 		 *
 		 * get single instance of Block_Widgets_Monster class
 		 *
-		 * @return object Block_Widgets_Monster
+		 * @return self
 		 */
-		public static function get_instance() {
+		public static function get_instance(): self {
 			if ( ! ( self::$instance instanceof self ) ) {
 				self::$instance = new self();
 			}
@@ -54,7 +55,7 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function init_plugin() {
+		public function init_plugin(): void {
 			// include constants
 			require_once dirname( __FILE__ ) . '/define.php';
 
@@ -88,7 +89,7 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 		 * @return array
 		 * @since 1.0.0
 		 */
-		public function dashboard_links( $links, $file ) {
+		public function dashboard_links( array $links, string $file ): array {
 			if ( plugin_basename( dirname( __FILE__ ) . '/block-widgets-monster.php' ) === $file ) {
 				$links[] = '<a href="http://demo.rgblab.net/block-widgets-monster" target="_blank">' . esc_html__( 'Docs & Demo', 'bwm' ) . '</a>';
 				$links[] = '<a href="https://wordpress.org/support/plugin/block-widgets-monster/reviews/#new-post" target="_blank">' . esc_html__( 'Please rate with ★★★★★', 'bwm' ) . '</a>';
@@ -107,14 +108,14 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function enqueue_backend_assets( $hook ) {
+		public function enqueue_backend_assets( string $hook ): void {
 
 			if ( 'widgets.php' === $hook ) {
 				$backend_labels = array(
 					'widgetTitle' => esc_html__( 'Block Widgets Monster', 'bwm' ),
 				);
 
-				wp_register_script( 'bwm-backend', BWM_URL_PATH . 'assets/js/backend.min.js', array( 'jquery' ), false, true );
+				wp_register_script( 'bwm-backend', BWM_URL_PATH . 'assets/js/backend.min.js', array( 'jquery' ), BWM_VERSION, true );
 				wp_localize_script( 'bwm-backend', 'backendLabels', $backend_labels );
 				wp_enqueue_script( 'bwm-backend' );
 			}
