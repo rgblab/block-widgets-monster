@@ -4,8 +4,8 @@ Contributors: rgblab
 Donate link: https://www.paypal.me/rgblab/
 Tags: widget, theme development, debug, woocommerce widget bundle, monster widget, woocommerce monster widget, widget, widget bundle
 Requires at least: 5.8
-Tested up to: 6.8.3
-Requires PHP: 7.2
+Tested up to: 7.1
+Requires PHP: 7.4
 Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -103,7 +103,7 @@ You can use official [theme unit test](https://github.com/WPTT/theme-test-data) 
 == Changelog ==
 
 = 1.0.5 (17. September 2026) =
-* Added PHP 7.2 compatibility
+* Added PHP 7.4 compatibility
 * Fixed warnings on the frontend for a widget with no options saved
 * Code maintenance
 

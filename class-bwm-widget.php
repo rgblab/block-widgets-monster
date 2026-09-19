@@ -17,7 +17,7 @@ if ( ! function_exists( 'bwm_register_widget' ) ) {
 
 if ( ! class_exists( 'BWM_Widget' ) ) {
 	/**
-	 * class BMW_Widget
+	 * class BWM_Widget
 	 */
 	class BWM_Widget extends WP_Widget {
 		// wp vars
@@ -243,7 +243,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 				$blocks = $woo_blocks;
 			}
 
-			return apply_filters( 'bmw_filter_blocks', $blocks );
+			return apply_filters( 'bwm_filter_blocks', $blocks );
 		}
 
 		/**
@@ -315,7 +315,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 			}
 
 			// replace id
-			$id     = 'bmw-' . rand( 0, 10000 );
+			$id     = 'bwm-' . rand( 0, 10000 );
 			$has_id = false;
 
 			$id_needle = 'id="';
