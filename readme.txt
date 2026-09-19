@@ -106,7 +106,7 @@ You can use official [theme unit test](https://github.com/WPTT/theme-test-data) 
 
 == Changelog ==
 
-= 1.0.5 (17. September 2026) =
+= 1.0.5 (20. September 2026) =
 * Added PHP 7.4 compatibility
 * Added product collection, product filters, reviews by product and reviews by category widgets in WooCommerce blocks list
 * Fixed warnings on the frontend for a widget with no options saved
