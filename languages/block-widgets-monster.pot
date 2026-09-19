@@ -19,27 +19,31 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: block-widgets-monster.php:93
-msgid "Docs & Demo"
+#: block-widgets-monster.php
+#: block-widgets-monster.php:115
+#: class-bwm-widget.php:51
+msgid "Block Widgets Monster"
 msgstr ""
 
 #: block-widgets-monster.php:94
-msgid "Please rate with ★★★★★"
+msgid "Docs & Demo"
 msgstr ""
 
 #: block-widgets-monster.php:95
-msgid "Donate"
+msgid "Please rate with ★★★★★"
 msgstr ""
 
-#: block-widgets-monster.php:114 class-bwm-widget.php:43
-msgid "Block Widgets Monster"
+#: block-widgets-monster.php:96
+msgid "Donate"
 msgstr ""
 
 #: blocks/woo-blocks.php:26
 msgid "Block All Reviews"
 msgstr ""
 
-#: blocks/woo-blocks.php:44 blocks/woo-blocks.php:48 blocks/woo-blocks.php:80
+#: blocks/woo-blocks.php:44
+#: blocks/woo-blocks.php:48
+#: blocks/woo-blocks.php:80
 #: blocks/woo-blocks.php:84
 msgid "Shop Now"
 msgstr ""
@@ -92,65 +96,107 @@ msgstr ""
 msgid "Block Top Rated Products"
 msgstr ""
 
-#: blocks/woo-blocks.php:277 blocks/woo-blocks.php:278
-#: blocks/woo-blocks.php:293 blocks/woo-blocks.php:294
-#: blocks/woo-blocks.php:309 blocks/woo-blocks.php:310
-#: blocks/woo-blocks.php:325 blocks/woo-blocks.php:326
-#: blocks/woo-blocks.php:341 blocks/woo-blocks.php:342 blocks/wp-blocks.php:213
-#: blocks/wp-blocks.php:214 blocks/wp-blocks.php:226 blocks/wp-blocks.php:227
-#: blocks/wp-blocks.php:239 blocks/wp-blocks.php:240 blocks/wp-blocks.php:252
-#: blocks/wp-blocks.php:253 blocks/wp-blocks.php:265 blocks/wp-blocks.php:266
+#: blocks/woo-blocks.php:291
+msgid "Block Reviews By Product"
+msgstr ""
+
+#: blocks/woo-blocks.php:318
+msgid "Block Reviews By Category"
+msgstr ""
+
+#: blocks/woo-blocks.php:326
+#: blocks/woo-blocks.php:327
+#: blocks/woo-blocks.php:342
+#: blocks/woo-blocks.php:343
+#: blocks/woo-blocks.php:358
+#: blocks/woo-blocks.php:359
+#: blocks/woo-blocks.php:374
+#: blocks/woo-blocks.php:375
+#: blocks/woo-blocks.php:390
+#: blocks/woo-blocks.php:391
+#: blocks/wp-blocks.php:213
+#: blocks/wp-blocks.php:214
+#: blocks/wp-blocks.php:226
+#: blocks/wp-blocks.php:227
+#: blocks/wp-blocks.php:239
+#: blocks/wp-blocks.php:240
+#: blocks/wp-blocks.php:252
+#: blocks/wp-blocks.php:253
+#: blocks/wp-blocks.php:265
+#: blocks/wp-blocks.php:266
 msgid "Search"
 msgstr ""
 
-#: blocks/woo-blocks.php:280 blocks/woo-blocks.php:296
-#: blocks/woo-blocks.php:312 blocks/woo-blocks.php:328
-#: blocks/woo-blocks.php:344 blocks/wp-blocks.php:216 blocks/wp-blocks.php:229
-#: blocks/wp-blocks.php:242 blocks/wp-blocks.php:255 blocks/wp-blocks.php:268
+#: blocks/woo-blocks.php:329
+#: blocks/woo-blocks.php:345
+#: blocks/woo-blocks.php:361
+#: blocks/woo-blocks.php:377
+#: blocks/woo-blocks.php:393
+#: blocks/wp-blocks.php:216
+#: blocks/wp-blocks.php:229
+#: blocks/wp-blocks.php:242
+#: blocks/wp-blocks.php:255
+#: blocks/wp-blocks.php:268
 msgid "Placeholder"
 msgstr ""
 
-#: blocks/woo-blocks.php:288
+#: blocks/woo-blocks.php:337
 msgid "Block Product Search Text Button Outside"
 msgstr ""
 
-#: blocks/woo-blocks.php:304
+#: blocks/woo-blocks.php:353
 msgid "Block Product Search Text Button Inside"
 msgstr ""
 
-#: blocks/woo-blocks.php:320
+#: blocks/woo-blocks.php:369
 msgid "Block Product Search No Button"
 msgstr ""
 
-#: blocks/woo-blocks.php:336
+#: blocks/woo-blocks.php:385
 msgid "Block Product Search Icon Button Outside"
 msgstr ""
 
-#: blocks/woo-blocks.php:352 blocks/wp-blocks.php:273
+#: blocks/woo-blocks.php:401
+#: blocks/wp-blocks.php:273
 msgid "Block Search Icon Button Inside"
 msgstr ""
 
-#: blocks/woo-blocks.php:379
+#: blocks/woo-blocks.php:420
 msgid "Block Products By Tag"
 msgstr ""
 
-#: blocks/woo-blocks.php:395 blocks/woo-blocks.php:451
-msgid "Filter By Price"
-msgstr ""
-
-#: blocks/woo-blocks.php:418 blocks/woo-blocks.php:474
-msgid "Block Filter Products By Price"
-msgstr ""
-
-#: blocks/woo-blocks.php:505
-msgid "Filter By Stock Status"
-msgstr ""
-
-#: blocks/woo-blocks.php:514
-msgid "Block Filter Products By Stock"
+#: blocks/woo-blocks.php:511
+msgid "Block Product Collection"
 msgstr ""
 
 #: blocks/woo-blocks.php:526
+#: blocks/woo-blocks.php:562
+msgid "Filter By Price"
+msgstr ""
+
+#: blocks/woo-blocks.php:549
+#: blocks/woo-blocks.php:585
+msgid "Block Filter Products By Price"
+msgstr ""
+
+#: blocks/woo-blocks.php:594
+msgid "Filter By Stock Status"
+msgstr ""
+
+#: blocks/woo-blocks.php:603
+msgid "Block Filter Products By Stock"
+msgstr ""
+
+#: blocks/woo-blocks.php:633
+#: blocks/woo-blocks.php:637
+msgid "Clear"
+msgstr ""
+
+#: blocks/woo-blocks.php:738
+msgid "Block Product Filters"
+msgstr ""
+
+#: blocks/woo-blocks.php:748
 msgid "Block Mini Cart"
 msgstr ""
 
@@ -206,7 +252,9 @@ msgstr ""
 msgid "Block RSS"
 msgstr ""
 
-#: blocks/wp-blocks.php:168 blocks/wp-blocks.php:176 blocks/wp-blocks.php:184
+#: blocks/wp-blocks.php:168
+#: blocks/wp-blocks.php:176
+#: blocks/wp-blocks.php:184
 #: blocks/wp-blocks.php:192
 msgid "Lorem ipsum dolor sit amet"
 msgstr ""
@@ -235,99 +283,99 @@ msgstr ""
 msgid "Block Tag Cloud"
 msgstr ""
 
-#: class-bwm-widget.php:46
+#: class-bwm-widget.php:54
 msgid "Test multiple block widgets at the same time."
 msgstr ""
 
-#: class-bwm-widget.php:79
+#: class-bwm-widget.php:90
 msgid "Widget source:"
 msgstr ""
 
-#: class-bwm-widget.php:82
+#: class-bwm-widget.php:93
 msgid "WordPress & WooCommerce"
 msgstr ""
 
-#: class-bwm-widget.php:84
+#: class-bwm-widget.php:95
 msgid "WordPress"
 msgstr ""
 
-#: class-bwm-widget.php:86
+#: class-bwm-widget.php:97
 msgid "WooCommerce"
 msgstr ""
 
-#: class-bwm-widget.php:91
+#: class-bwm-widget.php:102
 msgid "Widget type:"
 msgstr ""
 
-#: class-bwm-widget.php:93
+#: class-bwm-widget.php:104
 msgid "Block & Legacy"
 msgstr ""
 
-#: class-bwm-widget.php:94
+#: class-bwm-widget.php:105
 msgid "Block"
 msgstr ""
 
-#: class-bwm-widget.php:95
+#: class-bwm-widget.php:106
 msgid "Legacy"
 msgstr ""
 
-#: class-bwm-widget.php:100
+#: class-bwm-widget.php:111
 msgid "Number of colummns:"
 msgstr ""
 
-#: class-bwm-widget.php:102
+#: class-bwm-widget.php:113
 msgid "This option is applied to some WooCommerce block widgets only"
 msgstr ""
 
-#: class-bwm-widget.php:106
+#: class-bwm-widget.php:117
 msgid "Number of rows:"
 msgstr ""
 
-#: class-bwm-widget.php:110
+#: class-bwm-widget.php:121
 msgid "Show title before block widgets:"
 msgstr ""
 
-#: class-bwm-widget.php:113
+#: class-bwm-widget.php:123
 msgid "Enabling this option will output block heading with h2 tag and particular block widget as a grouped element, as seen in default sidebar content"
 msgstr ""
 
-#: class-bwm-widget.php:338
+#: class-bwm-widget.php:356
 msgid "Large image: Hand Coded"
 msgstr ""
 
-#: class-bwm-widget.php:340
+#: class-bwm-widget.php:358
 msgid "Large image: linked in a caption"
 msgstr ""
 
-#: class-bwm-widget.php:341
+#: class-bwm-widget.php:359
 msgid "This image is 960 by 720 pixels."
 msgstr ""
 
-#: class-bwm-widget.php:342
+#: class-bwm-widget.php:360
 msgid "Meat!"
 msgstr ""
 
-#: class-bwm-widget.php:343
+#: class-bwm-widget.php:361
 msgid "Hamburger fatback andouille, ball tip bacon t-bone turkey tenderloin. Ball tip shank pig, t-bone turducken prosciutto ground round rump bacon pork chop short loin turkey. Pancetta ball tip salami, hamburger t-bone capicola turkey ham hock pork belly tri-tip. Biltong bresaola tail, shoulder sausage turkey cow pork chop fatback. Turkey pork pig bacon short loin meatloaf, chicken ham hock flank andouille tenderloin shank rump filet mignon. Shoulder frankfurter shankle pancetta. Jowl andouille short ribs swine venison, pork loin pork chop meatball jerky filet mignon shoulder tenderloin chicken pork."
 msgstr ""
 
-#: class-bwm-widget.php:344
+#: class-bwm-widget.php:362
 msgid "Smile!"
 msgstr ""
 
-#: class-bwm-widget.php:346
+#: class-bwm-widget.php:364
 msgid "Select Element with long value"
 msgstr ""
 
-#: class-bwm-widget.php:349
+#: class-bwm-widget.php:367
 msgid "First"
 msgstr ""
 
-#: class-bwm-widget.php:350
+#: class-bwm-widget.php:368
 msgid "Second"
 msgstr ""
 
-#: class-bwm-widget.php:351
+#: class-bwm-widget.php:369
 msgid "Third"
 msgstr ""
 
@@ -446,3 +494,4 @@ msgstr ""
 #: widgets/wp-widgets.php:146
 msgid "Legacy Tag Cloud"
 msgstr ""
+

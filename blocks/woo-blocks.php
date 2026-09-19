@@ -266,9 +266,58 @@ $woo_blocks_source[] = array(
 	'blockHeading' => esc_html__( 'Block Top Rated Products', 'bwm' ),
 );
 
-// reviews by product // todo
+// reviews by product
+if ( ! empty( $this->woo_product_id ) ) {
+	$woo_blocks_source[] = array(
+		'blockName'    => 'woocommerce/reviews-by-product',
+		'attrs'        => array(
+			'productId'         => $this->woo_product_id, // manually add into innerHTML as data attr
+			'imageType'         => 'reviewer',            // manually add into innerHTML as data attr
+			'orderby'           => 'most-recent',         // manually add into innerHTML as data attr
+			'reviewsOnLoadMore' => $rows,                 // manually add into innerHTML as data attr
+			'reviewsOnPageLoad' => $rows,                 // manually add into innerHTML as data attr
+			'showReviewDate'    => true,                  // manually add into innerHTML as class name
+			'showReviewerName'  => true,                  // manually add into innerHTML as class name
+			'showReviewImage'   => true,                  // manually add into innerHTML as class name
+			'showReviewRating'  => true,                  // manually add into innerHTML as class name
+			'showReviewContent' => true,                  // manually add into innerHTML as class name
+		),
+		'innerHTML'    =>
+			'<div class="wp-block-woocommerce-reviews-by-product wc-block-reviews-by-product has-image has-name has-date has-rating has-content" data-product-id="' . esc_attr( $this->woo_product_id ) . '" data-image-type="reviewer" data-orderby="most-recent" data-reviews-on-page-load="' . esc_attr( $rows ) . '" data-reviews-on-load-more="' . esc_attr( $rows ) . '" data-show-load-more="true" data-show-orderby="true"></div>',
+		'innerContent' => array(
+			'<div class="wp-block-woocommerce-reviews-by-product wc-block-reviews-by-product has-image has-name has-date has-rating has-content" data-product-id="' . esc_attr( $this->woo_product_id ) . '" data-image-type="reviewer" data-orderby="most-recent" data-reviews-on-page-load="' . esc_attr( $rows ) . '" data-reviews-on-load-more="' . esc_attr( $rows ) . '" data-show-load-more="true" data-show-orderby="true"></div>',
+		),
+		'className'    => '',
+		'blockHeading' => esc_html__( 'Block Reviews By Product', 'bwm' ),
+	);
+}
 
-// reviews by category // todo
+// reviews by category
+if ( ! empty( $this->woo_product_category_id ) ) {
+	$woo_blocks_source[] = array(
+		'blockName'    => 'woocommerce/reviews-by-category',
+		'attrs'        => array(
+			'categoryIds'       => array( $this->woo_product_category_id ), // manually add into innerHTML as data attr
+			'imageType'         => 'product',                               // manually add into innerHTML as data attr
+			'orderby'           => 'most-recent',                           // manually add into innerHTML as data attr
+			'reviewsOnLoadMore' => $rows,                                   // manually add into innerHTML as data attr
+			'reviewsOnPageLoad' => $rows,                                   // manually add into innerHTML as data attr
+			'showReviewDate'    => true,                                    // manually add into innerHTML as class name
+			'showReviewerName'  => true,                                    // manually add into innerHTML as class name
+			'showReviewImage'   => true,                                    // manually add into innerHTML as class name
+			'showReviewRating'  => true,                                    // manually add into innerHTML as class name
+			'showReviewContent' => true,                                    // manually add into innerHTML as class name
+			'showProductName'   => true,                                    // manually add into innerHTML as class name
+		),
+		'innerHTML'    =>
+			'<div class="wp-block-woocommerce-reviews-by-category wc-block-reviews-by-category has-image has-name has-date has-rating has-content has-product-name" data-category-ids="' . esc_attr( $this->woo_product_category_id ) . '" data-image-type="product" data-orderby="most-recent" data-reviews-on-page-load="' . esc_attr( $rows ) . '" data-reviews-on-load-more="' . esc_attr( $rows ) . '" data-show-load-more="true" data-show-orderby="true"></div>',
+		'innerContent' => array(
+			'<div class="wp-block-woocommerce-reviews-by-category wc-block-reviews-by-category has-image has-name has-date has-rating has-content has-product-name" data-category-ids="' . esc_attr( $this->woo_product_category_id ) . '" data-image-type="product" data-orderby="most-recent" data-reviews-on-page-load="' . esc_attr( $rows ) . '" data-reviews-on-load-more="' . esc_attr( $rows ) . '" data-show-load-more="true" data-show-orderby="true"></div>',
+		),
+		'className'    => '',
+		'blockHeading' => esc_html__( 'Block Reviews By Category', 'bwm' ),
+	);
+}
 
 // product search
 $woo_blocks_source[] = array(
@@ -351,14 +400,6 @@ $woo_blocks_source[] = array(
 	'className'    => 'widget_search',
 	'blockHeading' => esc_html__( 'Block Search Icon Button Inside', 'bwm' ),
 );
-// $woo_blocks_source[] = array(
-// 	'blockName'    => 'woocommerce/product-search',
-// 	'attrs'        => array(
-// 		'hasLabel' => true,
-// 	),
-// 	'className'    => '',
-// 	'blockHeading' => esc_html__( 'Block Product Search', 'bwm' ),
-// );
 
 // products by tag
 if ( ! empty( $this->woo_product_tag_id ) ) {
@@ -379,6 +420,96 @@ if ( ! empty( $this->woo_product_tag_id ) ) {
 		'blockHeading' => esc_html__( 'Block Products By Tag', 'bwm' ),
 	);
 }
+
+// product collection
+$woo_blocks_source[] = array(
+	'blockName'    => 'woocommerce/product-collection',
+	'attrs'        => array(
+		'queryId'              => 0,
+		'query'                => array(
+			'perPage'                  => $rows,
+			'pages'                    => 0,
+			'offset'                   => 0,
+			'postType'                 => 'product',
+			'order'                    => 'asc',
+			'orderBy'                  => 'title',
+			'search'                   => '',
+			'exclude'                  => array(),
+			'inherit'                  => false,
+			'taxQuery'                 => array(),
+			'isProductCollectionBlock' => true,
+			'woocommerceAttributes'    => array(),
+			'woocommerceStockStatus'   => array( 'instock', 'outofstock', 'onbackorder' ),
+		),
+		'tagName'              => 'div',
+		'displayLayout'        => array(
+			'type'          => 'flex',
+			'columns'       => $cols,
+			'shrinkColumns' => true,
+		),
+		'queryContextIncludes' => array( 'collection' ),
+	),
+	'innerBlocks'  => array(
+		array(
+			'blockName'    => 'woocommerce/product-template',
+			'attrs'        => array(),
+			'innerBlocks'  => array(
+				array(
+					'blockName'    => 'woocommerce/product-image',
+					'attrs'        => array(
+						'imageSizing'             => 'thumbnail',
+						'isDescendentOfQueryLoop' => true,
+					),
+					'innerHTML'    => '',
+					'innerContent' => array(),
+				),
+				array(
+					'blockName'    => 'core/post-title',
+					'attrs'        => array(
+						'level'                  => 3,
+						'isLink'                 => true,
+						'__woocommerceNamespace' => 'woocommerce/product-collection/product-title',
+					),
+					'innerHTML'    => '',
+					'innerContent' => array(),
+				),
+				array(
+					'blockName'    => 'woocommerce/product-price',
+					'attrs'        => array(
+						'isDescendentOfQueryLoop' => true,
+					),
+					'innerHTML'    => '',
+					'innerContent' => array(),
+				),
+				array(
+					'blockName'    => 'woocommerce/product-button',
+					'attrs'        => array(
+						'isDescendentOfQueryLoop' => true,
+					),
+					'innerHTML'    => '',
+					'innerContent' => array(),
+				),
+			),
+			'innerHTML'    => '',
+			'innerContent' => array(
+				null,
+				null,
+				null,
+				null,
+			),
+		),
+	),
+	'innerHTML'    =>
+		'<div class="wp-block-woocommerce-product-collection">
+		</div>',
+	'innerContent' => array(
+		'<div class="wp-block-woocommerce-product-collection">',
+		null,
+		'</div>',
+	),
+	'className'    => '',
+	'blockHeading' => esc_html__( 'Block Product Collection', 'bwm' ),
+);
 
 // filter products by price
 $woo_blocks_source[] = array(
@@ -417,26 +548,6 @@ $woo_blocks_source[] = array(
 	'className'    => '',
 	'blockHeading' => esc_html__( 'Block Filter Products By Price', 'bwm' ),
 );
-// $woo_blocks_source[] = array(
-// 	'blockName'    => 'woocommerce/price-filter',
-// 	'attrs'        => array(
-// 		'showInputFields'  => true, // manually add into innerHTML as data attr
-// 		'showFilterButton' => true, // manually add into innerHTML as data attr
-// 		'heading'          => esc_html__( 'Filter By Price', 'bwm' ),
-// 		'headingLevel'     => 3,
-// 	),
-// 	'innerHTML'    =>
-// 		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="true" data-showfilterbutton="true">
-// 			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
-// 		</div>',
-// 	'innerContent' => array(
-// 		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="true" data-showfilterbutton="true">
-// 			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
-// 		</div>',
-// 	),
-// 	'className'    => '',
-// 	'blockHeading' => esc_html__( 'Block Filter Products By Price', 'bwm' ),
-// );
 $woo_blocks_source[] = array(
 	'blockName'    => 'woocommerce/filter-wrapper',
 	'attrs'        => array(
@@ -473,28 +584,6 @@ $woo_blocks_source[] = array(
 	'className'    => '',
 	'blockHeading' => esc_html__( 'Block Filter Products By Price', 'bwm' ),
 );
-// $woo_blocks_source[] = array(
-// 	'blockName'    => 'woocommerce/price-filter',
-// 	'attrs'        => array(
-// 		'showInputFields'  => false, // manually add into innerHTML as data attr
-// 		'showFilterButton' => true, // manually add into innerHTML as data attr
-// 		'heading'          => esc_html__( 'Filter By Price', 'bwm' ),
-// 		'headingLevel'     => 3,
-// 	),
-// 	'innerHTML'    =>
-// 		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="false" data-showfilterbutton="true">
-// 			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
-// 		</div>',
-// 	'innerContent' => array(
-// 		'<div class="wp-block-woocommerce-price-filter" data-showinputfields="false" data-showfilterbutton="true">
-// 			<span aria-hidden="true" class="wc-block-product-categories__placeholder"></span>
-// 		</div>',
-// 	),
-// 	'className'    => '',
-// 	'blockHeading' => esc_html__( 'Block Filter Products By Price', 'bwm' ),
-// );
-
-// filter products by attribute // todo
 
 // filter products by stock
 $woo_blocks_source[] = array(
@@ -514,7 +603,140 @@ $woo_blocks_source[] = array(
 	'blockHeading' => esc_html__( 'Block Filter Products By Stock', 'bwm' ),
 );
 
-// active product filters // todo
+// product filters
+$woo_attribute_id = 0;
+if ( ! empty( $this->woo_taxonomy ) ) {
+	$woo_attribute_id = wc_attribute_taxonomy_id_by_name( $this->woo_taxonomy );
+}
+$woo_blocks_source[] = array(
+	'blockName'    => 'woocommerce/product-filters',
+	'attrs'        => array(),
+	'innerBlocks'  => array(
+		array(
+			'blockName'    => 'woocommerce/product-filter-active',
+			'attrs'        => array(),
+			'innerBlocks'  => array(
+				array(
+					'blockName'    => 'woocommerce/product-filter-removable-chips',
+					'attrs'        => array(),
+					'innerHTML'    =>
+						'<div class="wc-block-product-filter-removable-chips"></div>',
+					'innerContent' => array(
+						'<div class="wc-block-product-filter-removable-chips"></div>',
+					),
+				),
+				array(
+					'blockName'    => 'woocommerce/product-filter-clear-button',
+					'attrs'        => array(),
+					'innerHTML'    =>
+						'<div class="wp-block-button">
+							<a class="wp-block-button__link">' . esc_html__( 'Clear', 'bwm' ) . '</a>
+						</div>',
+					'innerContent' => array(
+						'<div class="wp-block-button">
+							<a class="wp-block-button__link">' . esc_html__( 'Clear', 'bwm' ) . '</a>
+						</div>',
+					),
+				),
+			),
+			'innerHTML'    => '',
+			'innerContent' => array(
+				null,
+				null,
+			),
+		),
+		array(
+			'blockName'    => 'woocommerce/product-filter-price',
+			'attrs'        => array(),
+			'innerBlocks'  => array(
+				array(
+					'blockName'    => 'woocommerce/product-filter-price-slider',
+					'attrs'        => array(
+						'showInputFields' => true,
+					),
+					'innerHTML'    =>
+						'<div class="wc-block-product-filter-price-slider"></div>',
+					'innerContent' => array(
+						'<div class="wc-block-product-filter-price-slider"></div>',
+					),
+				),
+			),
+			'innerHTML'    => '',
+			'innerContent' => array(
+				null,
+			),
+		),
+		array(
+			'blockName'    => 'woocommerce/product-filter-status',
+			'attrs'        => array(
+				'showCounts' => true,
+			),
+			'innerBlocks'  => array(
+				array(
+					'blockName'    => 'woocommerce/product-filter-checkbox-list',
+					'attrs'        => array(),
+					'innerHTML'    => '',
+					'innerContent' => array(),
+				),
+			),
+			'innerHTML'    => '',
+			'innerContent' => array(
+				null,
+			),
+		),
+		array(
+			'blockName'    => 'woocommerce/product-filter-attribute',
+			'attrs'        => array(
+				'attributeId' => $woo_attribute_id,
+				'showCounts'  => true,
+			),
+			'innerBlocks'  => array(
+				array(
+					'blockName'    => 'woocommerce/product-filter-checkbox-list',
+					'attrs'        => array(),
+					'innerHTML'    => '',
+					'innerContent' => array(),
+				),
+			),
+			'innerHTML'    => '',
+			'innerContent' => array(
+				null,
+			),
+		),
+		array(
+			'blockName'    => 'woocommerce/product-filter-rating',
+			'attrs'        => array(
+				'showCounts' => true,
+			),
+			'innerBlocks'  => array(
+				array(
+					'blockName'    => 'woocommerce/product-filter-checkbox-list',
+					'attrs'        => array(),
+					'innerHTML'    => '',
+					'innerContent' => array(),
+				),
+			),
+			'innerHTML'    => '',
+			'innerContent' => array(
+				null,
+			),
+		),
+	),
+	'innerHTML'    =>
+		'<div class="wp-block-woocommerce-product-filters">
+		</div>',
+	'innerContent' => array(
+		'<div class="wp-block-woocommerce-product-filters">',
+		null,
+		null,
+		null,
+		null,
+		null,
+		'</div>',
+	),
+	'className'    => '',
+	'blockHeading' => esc_html__( 'Block Product Filters', 'bwm' ),
+);
 
 // mini cart
 $woo_blocks_source[] = array(

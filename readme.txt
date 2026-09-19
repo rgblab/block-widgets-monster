@@ -3,7 +3,7 @@
 Contributors: rgblab
 Donate link: https://www.paypal.me/rgblab/
 Tags: widget, theme development, debug, woocommerce widget bundle, monster widget, woocommerce monster widget, widget, widget bundle
-Requires at least: 5.8
+Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 7.4
 Stable tag: 1.0.5
@@ -74,10 +74,14 @@ WooCommerce block widgets:
 - On sale products
 - Products by attribute
 - Top rated products
+- Reviews by product
+- Reviews by category
 - Product search (5 instances - button inside/outside, button with icon/text and only text field)
 - Products by tag
+- Product collection
 - Filter products by price (2 instances - editable and regular price values)
 - Filter products by stock
+- Product filters (5 filters - active, price, stock status, attribute and rating)
 - Mini cart
 
 You can check out Block Widgets Monster plugin in action [here](http://demo.rgblab.net/block-widgets-monster).
@@ -104,6 +108,7 @@ You can use official [theme unit test](https://github.com/WPTT/theme-test-data) 
 
 = 1.0.5 (17. September 2026) =
 * Added PHP 7.4 compatibility
+* Added product collection, product filters, reviews by product and reviews by category widgets in WooCommerce blocks list
 * Fixed warnings on the frontend for a widget with no options saved
 * Code maintenance
 
