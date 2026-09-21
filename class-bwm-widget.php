@@ -73,8 +73,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 *
 		 * @param array $instance - widget instance
 		 *
-		 * param types are omitted, WP_Widget declares this method untyped and
-		 * narrowing a parent's signature is a fatal error
+		 * param types omitted, WP_Widget declares this method untyped
 		 *
 		 * @since 1.0.0
 		 */
@@ -132,14 +131,12 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 * @param array $args     - dynamic sidebar args
 		 * @param array $instance - widget instance
 		 *
-		 * param types are omitted, WP_Widget declares this method untyped and
-		 * narrowing a parent's signature is a fatal error
+		 * param types omitted, WP_Widget declares this method untyped
 		 *
 		 * @since 1.0.0
 		 */
 		public function widget( $args, $instance ): void {
-			// an instance saved before an option existed has no key for it, and
-			// 'update' only stores the keys that were filled in, so default them all
+			// default every option, an old instance may not have the key
 			$source = $instance['source'] ?? 'all';
 			$type   = $instance['type'] ?? 'all';
 			$cols   = (int) ( $instance['cols'] ?? 1 );
@@ -186,8 +183,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		 *
 		 * @return array
 		 *
-		 * param types are omitted, WP_Widget declares this method untyped and
-		 * narrowing a parent's signature is a fatal error
+		 * param types omitted, WP_Widget declares this method untyped
 		 *
 		 * @since 1.0.0
 		 */

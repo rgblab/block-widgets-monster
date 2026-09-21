@@ -1,9 +1,7 @@
-// backend bundle entry
-// one import per source file, in the order they should run
+// backend bundle entry, one import per source file
 import * as common from './backend/common.js';
 
-// backend stays on jQuery, wp-admin already loads it
-// jQuery( fn ) already defers to dom ready, so the modules don't wrap again
+// dom ready wrapper, modules get $ handed in
 jQuery(
 	function ( $ ) {
 		common.init( $ );

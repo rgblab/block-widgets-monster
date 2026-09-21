@@ -4,7 +4,7 @@
  * Plugin Name: Block Widgets Monster
  * Plugin URI: http://demo.rgblab.net/block-widgets-monster/
  * Description: Quick and easy testing of multiple WordPress and/or WooCommerce block/legacy widgets. Not intended for production use.
- * Version: 1.0.5
+ * Version: 1.0.6
  * Author: RGB Lab
  * Author URI: http://rgblab.net/
  * Text Domain: bwm
@@ -30,6 +30,8 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 		 * get single instance of Block_Widgets_Monster class
 		 *
 		 * @return self
+		 *
+		 * @since 1.0.0
 		 */
 		public static function get_instance(): self {
 			if ( ! ( self::$instance instanceof self ) ) {
@@ -92,6 +94,7 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 		public function dashboard_links( array $links, string $file ): array {
 			if ( plugin_basename( dirname( __FILE__ ) . '/block-widgets-monster.php' ) === $file ) {
 				$links[] = '<a href="http://demo.rgblab.net/block-widgets-monster" target="_blank">' . esc_html__( 'Docs & Demo', 'bwm' ) . '</a>';
+				$links[] = '<a href="https://playground.wordpress.net/?import-site=https://raw.githubusercontent.com/rgblab/wordpress-playground/main/block-widgets-monster.zip" target="_blank">' . esc_html__( 'Playground Live Test', 'bwm' ) . '</a>';
 				$links[] = '<a href="https://wordpress.org/support/plugin/block-widgets-monster/reviews/#new-post" target="_blank">' . esc_html__( 'Please rate with ★★★★★', 'bwm' ) . '</a>';
 				$links[] = '<a href="https://www.paypal.me/rgblab" target="_blank">' . esc_html__( 'Donate', 'bwm' ) . '</a>';
 			}

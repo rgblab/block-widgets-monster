@@ -6,7 +6,7 @@ Tags: widget, theme development, debug, woocommerce widget bundle, monster widge
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ Quick and easy testing of multiple WordPress and/or WooCommerce block/legacy wid
 
 == Description ==
 
-Block Widgets Monster is a free WordPress plugin that will allow you to test multiple WordPress and/or WooCommerce block/legacy widgets with ease.
+Block Widgets Monster is a free WordPress plugin that will allow you to test multiple WordPress and/or WooCommerce block/legacy widgets with ease.  Now on the [WordPress Playground](https://playground.wordpress.net/?import-site=https://raw.githubusercontent.com/rgblab/wordpress-playground/main/block-widgets-monster.zip).
 
 Here is a list of supported widgets.
 
@@ -84,7 +84,7 @@ WooCommerce block widgets:
 - Product filters (5 filters - active, price, stock status, attribute and rating)
 - Mini cart
 
-You can check out Block Widgets Monster plugin in action [here](http://demo.rgblab.net/block-widgets-monster).
+You can check out Block Widgets Monster plugin demo [here](http://demo.rgblab.net/block-widgets-monster) or you can test it on your own on [WordPress Playground](https://playground.wordpress.net/?import-site=https://raw.githubusercontent.com/rgblab/wordpress-playground/main/block-widgets-monster.zip).
 
 Need help? Have feature request? Visit [support thread](https://wordpress.org/support/plugin/block-widgets-monster).
 
@@ -106,6 +106,10 @@ You can use official [theme unit test](https://github.com/WPTT/theme-test-data) 
 
 == Changelog ==
 
+= 1.0.6 (22. September 2026) =
+* Added WordPress Playground setup and links
+* Code maintenance
+
 = 1.0.5 (20. September 2026) =
 * Added PHP 7.4 compatibility
 * Added product collection, product filters, reviews by product and reviews by category widgets in WooCommerce blocks list
@@ -119,7 +123,7 @@ You can use official [theme unit test](https://github.com/WPTT/theme-test-data) 
 * Improved WooCommerce product search and price filter block widgets
 
 = 1.0.2 (13. July 2022) =
-* Added filter products by price, filter products by stock and mini cart widges in WooCommerce blocks list
+* Added filter products by price, filter products by stock and mini cart widgets in WooCommerce blocks list
 
 = 1.0.1 (16. October 2021) =
 * Added all reviews widget in WooCommerce blocks list

@@ -1,11 +1,9 @@
 // legacy widget panel module
-// the entry owns the jQuery dom ready wrapper and hands $ in
 
 let $ = null;
 
 const panelVisibility = {
-	// block editor collapses a legacy widget to its preview, this plugin's widget
-	// has nothing to preview, so keep its edit form open instead
+	// keep edit form open, this widget has nothing to preview
 	init: function () {
 		$( '.wp-block-legacy-widget__edit-form-title' ).each(
 			function () {
@@ -21,23 +19,19 @@ const panelVisibility = {
 };
 
 const observer = {
-	// widget screen renders its blocks after dom ready, so poll until they show up
-	// and give up eventually, a screen with no blocks would poll forever otherwise
+	// poll limit, blocks render after dom ready
 	lookups   : 0,
 	maxLookups: 200,
 
 	init: function () {
-		// one observer instance watching every panel, observe() takes many targets,
-		// so this stays a single observer no matter how many widgets are on screen
+		// create mutation observer instance, one for every panel
 		const mutationObserver = new MutationObserver(
 			function () {
 				panelVisibility.init();
 			}
 		);
 
-		// only the class attribute matters, that is what block editor toggles
-		// between edit form and preview, and watching childList here would
-		// retrigger on the css this sets
+		// mutation observer options, only class name
 		const options = {
 			attributes     : true,
 			attributeFilter: ['class'],
@@ -60,8 +54,7 @@ const observer = {
 
 				panels.each(
 					function () {
-						// observing the same node twice is harmless, but the flag keeps
-						// this idempotent if the poll is ever restarted
+						// skip nodes already observed
 						if (this.dataset.bwmPanel) {
 							return;
 						}

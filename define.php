@@ -1,7 +1,15 @@
 <?php
 
+if ( ! defined( 'BWM_FILE' ) ) {
+	define( 'BWM_FILE', dirname( __FILE__ ) . '/block-widgets-monster.php' );
+}
+
 if ( ! defined( 'BWM_VERSION' ) ) {
-	define( 'BWM_VERSION', '1.0.5' );
+	$bwm_header = get_file_data( BWM_FILE, array( 'version' => 'Version' ) );
+
+	define( 'BWM_VERSION', $bwm_header['version'] );
+
+	unset( $bwm_header );
 }
 
 if ( ! defined( 'BWM_ABS_PATH' ) ) {

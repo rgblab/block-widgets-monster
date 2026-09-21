@@ -1,13 +1,14 @@
 {
 	"name": "block-widgets-monster",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "Build tooling for the Block Widgets Monster WordPress plugin.",
 	"private": true,
 	"type": "module",
 	"license": "GPL-2.0-or-later",
 	"scripts": {
 		"build": "vite build",
-		"watch": "vite build --watch"
+		"watch": "vite build --watch",
+		"i18n": "wp i18n make-pot . languages/block-widgets-monster.pot --slug=block-widgets-monster --exclude=node_modules,assets,.svn"
 	},
 	"devDependencies": {
 		"vite": "^7.0.0"
