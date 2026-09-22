@@ -7,13 +7,17 @@
  * Version: 1.0.6
  * Author: RGB Lab
  * Author URI: http://rgblab.net/
- * Text Domain: bwm
+ * Text Domain: block-widgets-monster
  * Domain Path: /languages/
  * Requires at least: 6.8
  * Requires PHP: 7.4
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 	/**
@@ -75,9 +79,6 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 				// priority 5 to ensure loading before gutenberg
 				add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_backend_assets' ), 5 );
 			}
-
-			// textdomain
-			load_plugin_textdomain( 'bwm', false, BWM_REL_PATH . '/languages' );
 		}
 
 		/**
@@ -93,10 +94,10 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 		 */
 		public function dashboard_links( array $links, string $file ): array {
 			if ( plugin_basename( dirname( __FILE__ ) . '/block-widgets-monster.php' ) === $file ) {
-				$links[] = '<a href="http://demo.rgblab.net/block-widgets-monster" target="_blank">' . esc_html__( 'Docs & Demo', 'bwm' ) . '</a>';
-				$links[] = '<a href="https://playground.wordpress.net/?import-site=https://raw.githubusercontent.com/rgblab/wordpress-playground/main/block-widgets-monster.zip" target="_blank">' . esc_html__( 'Playground Live Test', 'bwm' ) . '</a>';
-				$links[] = '<a href="https://wordpress.org/support/plugin/block-widgets-monster/reviews/#new-post" target="_blank">' . esc_html__( 'Please rate with ★★★★★', 'bwm' ) . '</a>';
-				$links[] = '<a href="https://www.paypal.me/rgblab" target="_blank">' . esc_html__( 'Donate', 'bwm' ) . '</a>';
+				$links[] = '<a href="http://demo.rgblab.net/block-widgets-monster" target="_blank">' . esc_html__( 'Docs & Demo', 'block-widgets-monster' ) . '</a>';
+				$links[] = '<a href="https://playground.wordpress.net/?import-site=https://raw.githubusercontent.com/rgblab/wordpress-playground/main/block-widgets-monster.zip" target="_blank">' . esc_html__( 'Playground Live Test', 'block-widgets-monster' ) . '</a>'; // phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent -- outbound link to a playground demo, nothing is loaded into the site.
+				$links[] = '<a href="https://wordpress.org/support/plugin/block-widgets-monster/reviews/#new-post" target="_blank">' . esc_html__( 'Please rate with ★★★★★', 'block-widgets-monster' ) . '</a>';
+				$links[] = '<a href="https://www.paypal.me/rgblab" target="_blank">' . esc_html__( 'Donate', 'block-widgets-monster' ) . '</a>';
 			}
 
 			return $links;
@@ -115,7 +116,7 @@ if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 
 			if ( 'widgets.php' === $hook ) {
 				$backend_labels = array(
-					'widgetTitle' => esc_html__( 'Block Widgets Monster', 'bwm' ),
+					'widgetTitle' => esc_html__( 'Block Widgets Monster', 'block-widgets-monster' ),
 				);
 
 				wp_register_script( 'bwm-backend', BWM_URL_PATH . 'assets/js/backend.min.js', array( 'jquery' ), BWM_VERSION, true );

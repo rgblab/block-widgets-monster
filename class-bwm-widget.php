@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! function_exists( 'bwm_register_widget' ) ) {
 	/**
 	 * register widget
@@ -48,10 +52,10 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		public function __construct() {
 			parent::__construct(
 				'Block_Widgets_Monster',
-				esc_html__( 'Block Widgets Monster', 'bwm' ),
+				esc_html__( 'Block Widgets Monster', 'block-widgets-monster' ),
 				array(
 					'classname'   => 'bwm',
-					'description' => esc_html__( 'Test multiple block widgets at the same time.', 'bwm' ),
+					'description' => esc_html__( 'Test multiple block widgets at the same time.', 'block-widgets-monster' ),
 				)
 			);
 
@@ -64,7 +68,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 				$this->get_woo_product_id();
 				add_action( 'init', array( $this, 'get_woo_product_category_id' ) );
 				add_action( 'init', array( $this, 'get_woo_product_tag_id' ) );
-				$this->get_woo_taxonomy_attrs();
+				add_action( 'init', array( $this, 'get_woo_taxonomy_attrs' ) );
 			}
 		}
 
@@ -86,40 +90,40 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 			?>
 			<div>
 				<p>
-					<label for="<?php echo $this->get_field_id( 'source' ); ?>"><?php echo esc_html__( 'Widget source:', 'bwm' ); ?></label>
-					<select id="<?php echo $this->get_field_id( 'source' ); ?>" name="<?php echo $this->get_field_name( 'source' ); ?>">
+					<label for="<?php echo esc_attr( $this->get_field_id( 'source' ) ); ?>"><?php echo esc_html__( 'Widget source:', 'block-widgets-monster' ); ?></label>
+					<select id="<?php echo esc_attr( $this->get_field_id( 'source' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'source' ) ); ?>">
 						<?php if ( $this->is_woo_installed ) : ?>
-							<option value="all" <?php selected( $source, 'all' ); ?>><?php echo esc_html__( 'WordPress & WooCommerce', 'bwm' ); ?></option>
+							<option value="all" <?php selected( $source, 'all' ); ?>><?php echo esc_html__( 'WordPress & WooCommerce', 'block-widgets-monster' ); ?></option>
 						<?php endif; ?>
-						<option value="wp" <?php selected( $source, 'wp' ); ?>><?php echo esc_html__( 'WordPress', 'bwm' ); ?></option>
+						<option value="wp" <?php selected( $source, 'wp' ); ?>><?php echo esc_html__( 'WordPress', 'block-widgets-monster' ); ?></option>
 						<?php if ( $this->is_woo_installed ) : ?>
-							<option value="woo" <?php selected( $source, 'woo' ); ?>><?php echo esc_html__( 'WooCommerce', 'bwm' ); ?></option>
+							<option value="woo" <?php selected( $source, 'woo' ); ?>><?php echo esc_html__( 'WooCommerce', 'block-widgets-monster' ); ?></option>
 						<?php endif; ?>
 					</select>
 				</p>
 				<p>
-					<label for="<?php echo $this->get_field_id( 'type' ); ?>"><?php echo esc_html__( 'Widget type:', 'bwm' ); ?></label>
-					<select id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>">
-						<option value="all" <?php selected( $type, 'all' ); ?>><?php echo esc_html__( 'Block & Legacy', 'bwm' ); ?></option>
-						<option value="block" <?php selected( $type, 'block' ); ?>><?php echo esc_html__( 'Block', 'bwm' ); ?></option>
-						<option value="legacy" <?php selected( $type, 'legacy' ); ?>><?php echo esc_html__( 'Legacy', 'bwm' ); ?></option>
+					<label for="<?php echo esc_attr( $this->get_field_id( 'type' ) ); ?>"><?php echo esc_html__( 'Widget type:', 'block-widgets-monster' ); ?></label>
+					<select id="<?php echo esc_attr( $this->get_field_id( 'type' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'type' ) ); ?>">
+						<option value="all" <?php selected( $type, 'all' ); ?>><?php echo esc_html__( 'Block & Legacy', 'block-widgets-monster' ); ?></option>
+						<option value="block" <?php selected( $type, 'block' ); ?>><?php echo esc_html__( 'Block', 'block-widgets-monster' ); ?></option>
+						<option value="legacy" <?php selected( $type, 'legacy' ); ?>><?php echo esc_html__( 'Legacy', 'block-widgets-monster' ); ?></option>
 					</select>
 				</p>
 				<?php if ( $this->is_woo_installed ) : ?>
 					<p>
-						<label for="<?php echo $this->get_field_id( 'cols' ); ?>"><?php echo esc_html__( 'Number of colummns:', 'bwm' ); ?></label>
-						<input id="<?php echo $this->get_field_id( 'cols' ); ?>" name="<?php echo $this->get_field_name( 'cols' ); ?>" type="number" min="1" max="5" value="<?php echo esc_attr( $cols ); ?>">
-						<span class="description"><?php echo esc_html__( 'This option is applied to some WooCommerce block widgets only', 'bwm' ); ?></span>
+						<label for="<?php echo esc_attr( $this->get_field_id( 'cols' ) ); ?>"><?php echo esc_html__( 'Number of colummns:', 'block-widgets-monster' ); ?></label>
+						<input id="<?php echo esc_attr( $this->get_field_id( 'cols' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'cols' ) ); ?>" type="number" min="1" max="5" value="<?php echo esc_attr( $cols ); ?>">
+						<span class="description"><?php echo esc_html__( 'This option is applied to some WooCommerce block widgets only', 'block-widgets-monster' ); ?></span>
 					</p>
 				<?php endif; ?>
 				<p>
-					<label for="<?php echo $this->get_field_id( 'rows' ); ?>"><?php echo esc_html__( 'Number of rows:', 'bwm' ); ?></label>
-					<input id="<?php echo $this->get_field_id( 'rows' ); ?>" name="<?php echo $this->get_field_name( 'rows' ); ?>" type="number" min="1" max="5" value="<?php echo esc_attr( $rows ); ?>">
+					<label for="<?php echo esc_attr( $this->get_field_id( 'rows' ) ); ?>"><?php echo esc_html__( 'Number of rows:', 'block-widgets-monster' ); ?></label>
+					<input id="<?php echo esc_attr( $this->get_field_id( 'rows' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'rows' ) ); ?>" type="number" min="1" max="5" value="<?php echo esc_attr( $rows ); ?>">
 				</p>
 				<p style="display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 11px;">
-					<label for="<?php echo $this->get_field_id( 'group' ); ?>"><?php echo esc_html__( 'Show title before block widgets:', 'bwm' ); ?></label>
-					<input <?php checked( $group, 'yes' ); ?> id="<?php echo $this->get_field_id( 'group' ); ?>" name="<?php echo $this->get_field_name( 'group' ); ?>" type="checkbox" value="yes">
-					<span class="description"><?php echo esc_html__( 'Enabling this option will output block heading with h2 tag and particular block widget as a grouped element, as seen in default sidebar content', 'bwm' ); ?></span>
+					<label for="<?php echo esc_attr( $this->get_field_id( 'group' ) ); ?>"><?php echo esc_html__( 'Show title before block widgets:', 'block-widgets-monster' ); ?></label>
+					<input <?php checked( $group, 'yes' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'group' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'group' ) ); ?>" type="checkbox" value="yes">
+					<span class="description"><?php echo esc_html__( 'Enabling this option will output block heading with h2 tag and particular block widget as a grouped element, as seen in default sidebar content', 'block-widgets-monster' ); ?></span>
 				</p>
 			</div>
 			<?php
@@ -154,9 +158,10 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 					$args['widget_id'] = 'bwm-block-' . wp_rand( 0, 100000 ); // generate new unique id to prevent widget caching
 					$block_object      = new WP_Block( $block );
 
-					echo $this->get_before_widget( $args['before_widget'], $classes );
-					echo $block_object->render();
-					echo $args['after_widget'];
+					// theme sidebar markup and rendered block html, escaping would break them
+					echo $this->get_before_widget( $args['before_widget'], $classes ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo $block_object->render(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo $args['after_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 			}
 
@@ -311,7 +316,7 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 			}
 
 			// replace id
-			$id     = 'bwm-' . rand( 0, 10000 );
+			$id     = 'bwm-' . wp_rand( 0, 10000 );
 			$has_id = false;
 
 			$id_needle = 'id="';
@@ -349,20 +354,20 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		public function get_wp_html(): string {
 			$html = array();
 
-			$html[] = '<strong>' . esc_html__( 'Large image: Hand Coded', 'bwm' ) . '</strong>';
+			$html[] = '<strong>' . esc_html__( 'Large image: Hand Coded', 'block-widgets-monster' ) . '</strong>';
 			$html[] = '<img src="' . esc_url( BWM_URL_PATH . 'assets/images/bikes.jpg' ) . '" alt="">';
-			$html[] = '<strong>' . esc_html__( 'Large image: linked in a caption', 'bwm' ) . '</strong>';
-			$html[] = '<div class="wp-caption alignnone"><a href="#"><img src="' . esc_url( BWM_URL_PATH . 'assets/images/bikes.jpg' ) . '" class="size-large" height="720" width="960" alt=""></a><p class="wp-caption-text">' . __( 'This image is 960 by 720 pixels.', 'bwm' ) . ' ' . convert_smilies( ':)' ) . '</p></div>';
-			$html[] = '<strong>' . esc_html__( 'Meat!', 'bwm' ) . '</strong>';
-			$html[] = esc_html__( 'Hamburger fatback andouille, ball tip bacon t-bone turkey tenderloin. Ball tip shank pig, t-bone turducken prosciutto ground round rump bacon pork chop short loin turkey. Pancetta ball tip salami, hamburger t-bone capicola turkey ham hock pork belly tri-tip. Biltong bresaola tail, shoulder sausage turkey cow pork chop fatback. Turkey pork pig bacon short loin meatloaf, chicken ham hock flank andouille tenderloin shank rump filet mignon. Shoulder frankfurter shankle pancetta. Jowl andouille short ribs swine venison, pork loin pork chop meatball jerky filet mignon shoulder tenderloin chicken pork.', 'bwm' );
-			$html[] = '<strong>' . esc_html__( 'Smile!', 'bwm' ) . '</strong>';
+			$html[] = '<strong>' . esc_html__( 'Large image: linked in a caption', 'block-widgets-monster' ) . '</strong>';
+			$html[] = '<div class="wp-caption alignnone"><a href="#"><img src="' . esc_url( BWM_URL_PATH . 'assets/images/bikes.jpg' ) . '" class="size-large" height="720" width="960" alt=""></a><p class="wp-caption-text">' . __( 'This image is 960 by 720 pixels.', 'block-widgets-monster' ) . ' ' . convert_smilies( ':)' ) . '</p></div>';
+			$html[] = '<strong>' . esc_html__( 'Meat!', 'block-widgets-monster' ) . '</strong>';
+			$html[] = esc_html__( 'Hamburger fatback andouille, ball tip bacon t-bone turkey tenderloin. Ball tip shank pig, t-bone turducken prosciutto ground round rump bacon pork chop short loin turkey. Pancetta ball tip salami, hamburger t-bone capicola turkey ham hock pork belly tri-tip. Biltong bresaola tail, shoulder sausage turkey cow pork chop fatback. Turkey pork pig bacon short loin meatloaf, chicken ham hock flank andouille tenderloin shank rump filet mignon. Shoulder frankfurter shankle pancetta. Jowl andouille short ribs swine venison, pork loin pork chop meatball jerky filet mignon shoulder tenderloin chicken pork.', 'block-widgets-monster' );
+			$html[] = '<strong>' . esc_html__( 'Smile!', 'block-widgets-monster' ) . '</strong>';
 			$html[] = convert_smilies( ';)' ) . ' ' . convert_smilies( ':)' ) . ' ' . convert_smilies( ':-D' );
-			$html[] = '<strong>' . esc_html__( 'Select Element with long value', 'bwm' ) . '</strong>';
+			$html[] = '<strong>' . esc_html__( 'Select Element with long value', 'block-widgets-monster' ) . '</strong>';
 			$html[] = '<form method="get" action="/">';
 			$html[] = '<select name="bwm-just-testing">';
-			$html[] = '<option value="0">' . esc_html__( 'First', 'bwm' ) . '</option>';
-			$html[] = '<option value="1">' . esc_html__( 'Second', 'bwm' ) . '</option>';
-			$html[] = '<option value="2">' . esc_html__( 'Third', 'bwm' ) . ' OMG! How can one option contain soooo many words? This really is a lot of words.</option>';
+			$html[] = '<option value="0">' . esc_html__( 'First', 'block-widgets-monster' ) . '</option>';
+			$html[] = '<option value="1">' . esc_html__( 'Second', 'block-widgets-monster' ) . '</option>';
+			$html[] = '<option value="2">' . esc_html__( 'Third', 'block-widgets-monster' ) . ' OMG! How can one option contain soooo many words? This really is a lot of words.</option>';
 			$html[] = '</select>';
 			$html[] = '</form>';
 
@@ -459,19 +464,31 @@ if ( ! class_exists( 'BWM_Widget' ) ) {
 		}
 
 		/**
-		 * get woo product variations by selecting one from database
+		 * get woo product attribute taxonomy and one of its terms
 		 *
 		 * @since 1.0.0
 		 */
 		public function get_woo_taxonomy_attrs(): void {
-			global $wpdb;
+			// first attribute taxonomy that actually has a term
+			foreach ( wc_get_attribute_taxonomies() as $attribute_taxonomy ) {
+				$taxonomy = wc_attribute_taxonomy_name( $attribute_taxonomy->attribute_name );
 
-			// get term taxonomy id
-			$taxonomy_attrs = $wpdb->get_results( "SELECT taxonomy, term_id FROM $wpdb->term_taxonomy WHERE taxonomy LIKE 'pa%' LIMIT 1" );
+				$args = array(
+					'taxonomy'   => $taxonomy,
+					'orderby'    => 'name',
+					'number'     => 1,
+					'fields'     => 'ids',
+					'hide_empty' => false,
+				);
 
-			if ( ! empty( $taxonomy_attrs ) ) {
-				$this->woo_taxonomy = $taxonomy_attrs[0]->taxonomy;
-				$this->woo_term_id  = $taxonomy_attrs[0]->term_id;
+				$terms = get_terms( $args );
+
+				if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+					$this->woo_taxonomy = $taxonomy;
+					$this->woo_term_id  = (int) $terms[0];
+
+					break;
+				}
 			}
 		}
 

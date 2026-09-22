@@ -1,12 +1,16 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $woo_widgets = array();
 
 // cart
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Cart',
 	'attrs'      => array(
-		'title' => esc_html__( 'Legacy Cart', 'bwm' ),
+		'title' => esc_html__( 'Legacy Cart', 'block-widgets-monster' ),
 	),
 	'className'  => 'woocommerce widget_shopping_cart',
 );
@@ -15,7 +19,7 @@ $woo_widgets[] = array(
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Product_Search',
 	'attrs'      => array(
-		'title' => esc_html__( 'Legacy Search Product', 'bwm' ),
+		'title' => esc_html__( 'Legacy Search Product', 'block-widgets-monster' ),
 	),
 	'className'  => 'woocommerce widget_product_search',
 );
@@ -24,7 +28,7 @@ $woo_widgets[] = array(
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Layered_Nav_Filters',
 	'attrs'      => array(
-		'title' => esc_html__( 'Legacy Layered Nav Filter', 'bwm' ),
+		'title' => esc_html__( 'Legacy Layered Nav Filter', 'block-widgets-monster' ),
 	),
 	'className'  => 'woocommerce widget_layered_nav_filters',
 );
@@ -33,7 +37,7 @@ $woo_widgets[] = array(
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Layered_Nav',
 	'attrs'      => array(
-		'title'        => esc_html__( 'Legacy Layered Nav List', 'bwm' ),
+		'title'        => esc_html__( 'Legacy Layered Nav List', 'block-widgets-monster' ),
 		'attribute'    => 'color',
 		'display_type' => 'list',
 		'query_type'   => 'or',
@@ -43,7 +47,7 @@ $woo_widgets[] = array(
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Layered_Nav',
 	'attrs'      => array(
-		'title'        => esc_html__( 'Legacy Layered Nav Dropdown', 'bwm' ),
+		'title'        => esc_html__( 'Legacy Layered Nav Dropdown', 'block-widgets-monster' ),
 		'attribute'    => 'color',
 		'display_type' => 'dropdown',
 		'query_type'   => 'or',
@@ -55,7 +59,7 @@ $woo_widgets[] = array(
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Price_Filter',
 	'attrs'      => array(
-		'title' => esc_html__( 'Legacy Price Filter', 'bwm' ),
+		'title' => esc_html__( 'Legacy Price Filter', 'block-widgets-monster' ),
 	),
 	'className'  => 'woocommerce widget_price_filter',
 );
@@ -64,7 +68,7 @@ $woo_widgets[] = array(
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Product_Categories',
 	'attrs'      => array(
-		'title'              => esc_html__( 'Legacy Product Categories Dropdown', 'bwm' ),
+		'title'              => esc_html__( 'Legacy Product Categories Dropdown', 'block-widgets-monster' ),
 		'orderby'            => 'name',
 		'dropdown'           => 1,
 		'count'              => 1,
@@ -76,7 +80,7 @@ $woo_widgets[] = array(
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Product_Categories',
 	'attrs'      => array(
-		'title'              => esc_html__( 'Legacy Product Categories List', 'bwm' ),
+		'title'              => esc_html__( 'Legacy Product Categories List', 'block-widgets-monster' ),
 		'orderby'            => 'name',
 		'dropdown'           => 0,
 		'count'              => 1,
@@ -90,7 +94,7 @@ $woo_widgets[] = array(
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Product_Tag_Cloud',
 	'attrs'      => array(
-		'title' => esc_html__( 'Legacy Product Tag Cloud', 'bwm' ),
+		'title' => esc_html__( 'Legacy Product Tag Cloud', 'block-widgets-monster' ),
 	),
 	'className'  => 'woocommerce widget_product_tag_cloud',
 );
@@ -99,7 +103,7 @@ $woo_widgets[] = array(
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Products',
 	'attrs'      => array(
-		'title'       => esc_html__( 'Legacy All Products', 'bwm' ),
+		'title'       => esc_html__( 'Legacy All Products', 'block-widgets-monster' ),
 		'number'      => $rows,
 		'show'        => '',
 		'orderby'     => 'date',
@@ -112,7 +116,7 @@ $woo_widgets[] = array(
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Products',
 	'attrs'      => array(
-		'title'       => esc_html__( 'Legacy Featured Products', 'bwm' ),
+		'title'       => esc_html__( 'Legacy Featured Products', 'block-widgets-monster' ),
 		'number'      => $rows,
 		'show'        => 'featured',
 		'orderby'     => 'date',
@@ -125,7 +129,7 @@ $woo_widgets[] = array(
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Products',
 	'attrs'      => array(
-		'title'       => esc_html__( 'Legacy Products On-Sale', 'bwm' ),
+		'title'       => esc_html__( 'Legacy Products On-Sale', 'block-widgets-monster' ),
 		'number'      => $rows,
 		'show'        => 'onsale',
 		'orderby'     => 'date',
@@ -140,7 +144,7 @@ $woo_widgets[] = array(
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Recent_Reviews',
 	'attrs'      => array(
-		'title'  => esc_html__( 'Legacy Recent Reviews', 'bwm' ),
+		'title'  => esc_html__( 'Legacy Recent Reviews', 'block-widgets-monster' ),
 		'number' => $rows,
 	),
 	'className'  => 'woocommerce widget_recent_reviews',
@@ -150,7 +154,7 @@ $woo_widgets[] = array(
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Recently_Viewed',
 	'attrs'      => array(
-		'title'  => esc_html__( 'Legacy Recently Viewed Products', 'bwm' ),
+		'title'  => esc_html__( 'Legacy Recently Viewed Products', 'block-widgets-monster' ),
 		'number' => $rows,
 	),
 	'className'  => 'woocommerce widget_recently_viewed_products',
@@ -160,7 +164,7 @@ $woo_widgets[] = array(
 $woo_widgets[] = array(
 	'widgetName' => 'WC_Widget_Top_Rated_Products',
 	'attrs'      => array(
-		'title'  => esc_html__( 'Legacy Top Rated Products', 'bwm' ),
+		'title'  => esc_html__( 'Legacy Top Rated Products', 'block-widgets-monster' ),
 		'number' => $rows,
 	),
 	'className'  => 'woocommerce widget_top_rated_products',

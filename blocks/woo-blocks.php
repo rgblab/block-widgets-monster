@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $woo_blocks_source = array();
 
 // all reviews
@@ -23,7 +27,7 @@ $woo_blocks_source[] = array(
 		'<div class="wp-block-woocommerce-all-reviews wc-block-all-reviews has-image has-name has-date has-rating has-content has-product-name"></div>',
 	),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block All Reviews', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block All Reviews', 'block-widgets-monster' ),
 );
 
 // featured category
@@ -41,11 +45,11 @@ if ( ! empty( $this->woo_product_category_id ) ) {
 				),
 				'innerHTML'    =>
 					'<div class="wp-block-button aligncenter">
-						<a class="wp-block-button__link" href="' . esc_url( get_term_link( $this->woo_product_category_id ) ) . '">' . esc_html__( 'Shop Now', 'bwm' ) . '</a>
+						<a class="wp-block-button__link" href="' . esc_url( get_term_link( $this->woo_product_category_id ) ) . '">' . esc_html__( 'Shop Now', 'block-widgets-monster' ) . '</a>
 					</div>',
 				'innerContent' => array(
 					'<div class="wp-block-button aligncenter">
-						<a class="wp-block-button__link" href="' . esc_url( get_term_link( $this->woo_product_category_id ) ) . '">' . esc_html__( 'Shop Now', 'bwm' ) . '</a>
+						<a class="wp-block-button__link" href="' . esc_url( get_term_link( $this->woo_product_category_id ) ) . '">' . esc_html__( 'Shop Now', 'block-widgets-monster' ) . '</a>
 					</div>',
 				),
 			),
@@ -55,7 +59,7 @@ if ( ! empty( $this->woo_product_category_id ) ) {
 			null,
 		),
 		'className'    => '',
-		'blockHeading' => esc_html__( 'Block Featured Category', 'bwm' ),
+		'blockHeading' => esc_html__( 'Block Featured Category', 'block-widgets-monster' ),
 	);
 }
 
@@ -77,11 +81,11 @@ if ( ! empty( $this->woo_product_id ) ) {
 				),
 				'innerHTML'    =>
 					'<div class="wp-block-button aligncenter">
-						<a class="wp-block-button__link" href="' . esc_url( get_permalink( $this->woo_product_id ) ) . '">' . esc_html__( 'Shop Now', 'bwm' ) . '</a>
+						<a class="wp-block-button__link" href="' . esc_url( get_permalink( $this->woo_product_id ) ) . '">' . esc_html__( 'Shop Now', 'block-widgets-monster' ) . '</a>
 					</div>',
 				'innerContent' => array(
 					'<div class="wp-block-button aligncenter">
-						<a class="wp-block-button__link" href="' . esc_url( get_permalink( $this->woo_product_id ) ) . '">' . esc_html__( 'Shop Now', 'bwm' ) . '</a>
+						<a class="wp-block-button__link" href="' . esc_url( get_permalink( $this->woo_product_id ) ) . '">' . esc_html__( 'Shop Now', 'block-widgets-monster' ) . '</a>
 					</div>',
 				),
 			),
@@ -91,7 +95,7 @@ if ( ! empty( $this->woo_product_id ) ) {
 			null,
 		),
 		'className'    => '',
-		'blockHeading' => esc_html__( 'Block Featured Product', 'bwm' ),
+		'blockHeading' => esc_html__( 'Block Featured Product', 'block-widgets-monster' ),
 	);
 }
 
@@ -110,7 +114,7 @@ if ( ! empty( $this->woo_product_id ) ) {
 			'products'          => array( $this->woo_product_id ),
 		),
 		'className'    => '',
-		'blockHeading' => esc_html__( 'Block Hand-picked Product', 'bwm' ),
+		'blockHeading' => esc_html__( 'Block Hand-picked Product', 'block-widgets-monster' ),
 	);
 }
 
@@ -128,7 +132,7 @@ $woo_blocks_source[] = array(
 		),
 	),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block Best Selling Products', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Best Selling Products', 'block-widgets-monster' ),
 );
 
 // product categories list
@@ -142,7 +146,7 @@ $woo_blocks_source[] = array(
 		'isHierarchical' => true,
 	),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block Product Categories List W/ Images', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Product Categories List W/ Images', 'block-widgets-monster' ),
 );
 $woo_blocks_source[] = array(
 	'blockName'    => 'woocommerce/product-categories',
@@ -154,7 +158,7 @@ $woo_blocks_source[] = array(
 		'isHierarchical' => true,
 	),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block Product Categories List W/O Images', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Product Categories List W/O Images', 'block-widgets-monster' ),
 );
 $woo_blocks_source[] = array(
 	'blockName'    => 'woocommerce/product-categories',
@@ -166,7 +170,7 @@ $woo_blocks_source[] = array(
 		'isHierarchical' => true,
 	),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block Product Categories Dropdown', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Product Categories Dropdown', 'block-widgets-monster' ),
 );
 
 // products by category
@@ -185,7 +189,7 @@ if ( ! empty( $this->woo_product_category_id ) ) {
 			),
 		),
 		'className'    => '',
-		'blockHeading' => esc_html__( 'Block Products By Category', 'bwm' ),
+		'blockHeading' => esc_html__( 'Block Products By Category', 'block-widgets-monster' ),
 	);
 }
 
@@ -203,7 +207,7 @@ $woo_blocks_source[] = array(
 		),
 	),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block New Products', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block New Products', 'block-widgets-monster' ),
 );
 
 // on sale products
@@ -220,7 +224,7 @@ $woo_blocks_source[] = array(
 		),
 	),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block Products On Sale', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Products On Sale', 'block-widgets-monster' ),
 );
 
 // products by attribute
@@ -244,7 +248,7 @@ if ( ! empty( $this->woo_term_id ) && ! empty( $this->woo_taxonomy ) ) {
 			),
 		),
 		'className'    => '',
-		'blockHeading' => esc_html__( 'Block Products By Attribute', 'bwm' ),
+		'blockHeading' => esc_html__( 'Block Products By Attribute', 'block-widgets-monster' ),
 	);
 }
 
@@ -263,7 +267,7 @@ $woo_blocks_source[] = array(
 		),
 	),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block Top Rated Products', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Top Rated Products', 'block-widgets-monster' ),
 );
 
 // reviews by product
@@ -288,7 +292,7 @@ if ( ! empty( $this->woo_product_id ) ) {
 			'<div class="wp-block-woocommerce-reviews-by-product wc-block-reviews-by-product has-image has-name has-date has-rating has-content" data-product-id="' . esc_attr( $this->woo_product_id ) . '" data-image-type="reviewer" data-orderby="most-recent" data-reviews-on-page-load="' . esc_attr( $rows ) . '" data-reviews-on-load-more="' . esc_attr( $rows ) . '" data-show-load-more="true" data-show-orderby="true"></div>',
 		),
 		'className'    => '',
-		'blockHeading' => esc_html__( 'Block Reviews By Product', 'bwm' ),
+		'blockHeading' => esc_html__( 'Block Reviews By Product', 'block-widgets-monster' ),
 	);
 }
 
@@ -315,7 +319,7 @@ if ( ! empty( $this->woo_product_category_id ) ) {
 			'<div class="wp-block-woocommerce-reviews-by-category wc-block-reviews-by-category has-image has-name has-date has-rating has-content has-product-name" data-category-ids="' . esc_attr( $this->woo_product_category_id ) . '" data-image-type="product" data-orderby="most-recent" data-reviews-on-page-load="' . esc_attr( $rows ) . '" data-reviews-on-load-more="' . esc_attr( $rows ) . '" data-show-load-more="true" data-show-orderby="true"></div>',
 		),
 		'className'    => '',
-		'blockHeading' => esc_html__( 'Block Reviews By Category', 'bwm' ),
+		'blockHeading' => esc_html__( 'Block Reviews By Category', 'block-widgets-monster' ),
 	);
 }
 
@@ -323,10 +327,10 @@ if ( ! empty( $this->woo_product_category_id ) ) {
 $woo_blocks_source[] = array(
 	'blockName'    => 'core/search',
 	'attrs'        => array(
-		'label'          => esc_html__( 'Search', 'bwm' ),
-		'buttonText'     => esc_html__( 'Search', 'bwm' ),
+		'label'          => esc_html__( 'Search', 'block-widgets-monster' ),
+		'buttonText'     => esc_html__( 'Search', 'block-widgets-monster' ),
 		'showLabel'      => true,
-		'placeholder'    => esc_html__( 'Placeholder', 'bwm' ),
+		'placeholder'    => esc_html__( 'Placeholder', 'block-widgets-monster' ),
 		'buttonPosition' => 'button-outside',
 		'buttonUseIcon'  => false,
 		'query'          => array(
@@ -334,15 +338,15 @@ $woo_blocks_source[] = array(
 		),
 	),
 	'className'    => 'widget_search',
-	'blockHeading' => esc_html__( 'Block Product Search Text Button Outside', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Product Search Text Button Outside', 'block-widgets-monster' ),
 );
 $woo_blocks_source[] = array(
 	'blockName'    => 'core/search',
 	'attrs'        => array(
-		'label'          => esc_html__( 'Search', 'bwm' ),
-		'buttonText'     => esc_html__( 'Search', 'bwm' ),
+		'label'          => esc_html__( 'Search', 'block-widgets-monster' ),
+		'buttonText'     => esc_html__( 'Search', 'block-widgets-monster' ),
 		'showLabel'      => true,
-		'placeholder'    => esc_html__( 'Placeholder', 'bwm' ),
+		'placeholder'    => esc_html__( 'Placeholder', 'block-widgets-monster' ),
 		'buttonPosition' => 'button-inside',
 		'buttonUseIcon'  => false,
 		'query'          => array(
@@ -350,15 +354,15 @@ $woo_blocks_source[] = array(
 		),
 	),
 	'className'    => 'widget_search',
-	'blockHeading' => esc_html__( 'Block Product Search Text Button Inside', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Product Search Text Button Inside', 'block-widgets-monster' ),
 );
 $woo_blocks_source[] = array(
 	'blockName'    => 'core/search',
 	'attrs'        => array(
-		'label'          => esc_html__( 'Search', 'bwm' ),
-		'buttonText'     => esc_html__( 'Search', 'bwm' ),
+		'label'          => esc_html__( 'Search', 'block-widgets-monster' ),
+		'buttonText'     => esc_html__( 'Search', 'block-widgets-monster' ),
 		'showLabel'      => true,
-		'placeholder'    => esc_html__( 'Placeholder', 'bwm' ),
+		'placeholder'    => esc_html__( 'Placeholder', 'block-widgets-monster' ),
 		'buttonPosition' => 'no-button',
 		'buttonUseIcon'  => false,
 		'query'          => array(
@@ -366,15 +370,15 @@ $woo_blocks_source[] = array(
 		),
 	),
 	'className'    => 'widget_search',
-	'blockHeading' => esc_html__( 'Block Product Search No Button', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Product Search No Button', 'block-widgets-monster' ),
 );
 $woo_blocks_source[] = array(
 	'blockName'    => 'core/search',
 	'attrs'        => array(
-		'label'          => esc_html__( 'Search', 'bwm' ),
-		'buttonText'     => esc_html__( 'Search', 'bwm' ),
+		'label'          => esc_html__( 'Search', 'block-widgets-monster' ),
+		'buttonText'     => esc_html__( 'Search', 'block-widgets-monster' ),
 		'showLabel'      => true,
-		'placeholder'    => esc_html__( 'Placeholder', 'bwm' ),
+		'placeholder'    => esc_html__( 'Placeholder', 'block-widgets-monster' ),
 		'buttonPosition' => 'button-outside',
 		'buttonUseIcon'  => true,
 		'query'          => array(
@@ -382,15 +386,15 @@ $woo_blocks_source[] = array(
 		),
 	),
 	'className'    => 'widget_search',
-	'blockHeading' => esc_html__( 'Block Product Search Icon Button Outside', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Product Search Icon Button Outside', 'block-widgets-monster' ),
 );
 $woo_blocks_source[] = array(
 	'blockName'    => 'core/search',
 	'attrs'        => array(
-		'label'          => esc_html__( 'Search', 'bwm' ),
-		'buttonText'     => esc_html__( 'Search', 'bwm' ),
+		'label'          => esc_html__( 'Search', 'block-widgets-monster' ),
+		'buttonText'     => esc_html__( 'Search', 'block-widgets-monster' ),
 		'showLabel'      => true,
-		'placeholder'    => esc_html__( 'Placeholder', 'bwm' ),
+		'placeholder'    => esc_html__( 'Placeholder', 'block-widgets-monster' ),
 		'buttonPosition' => 'button-inside',
 		'buttonUseIcon'  => true,
 		'query'          => array(
@@ -398,7 +402,7 @@ $woo_blocks_source[] = array(
 		),
 	),
 	'className'    => 'widget_search',
-	'blockHeading' => esc_html__( 'Block Search Icon Button Inside', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Search Icon Button Inside', 'block-widgets-monster' ),
 );
 
 // products by tag
@@ -417,7 +421,7 @@ if ( ! empty( $this->woo_product_tag_id ) ) {
 			'tags'              => array( $this->woo_product_tag_id ),
 		),
 		'className'    => '',
-		'blockHeading' => esc_html__( 'Block Products By Tag', 'bwm' ),
+		'blockHeading' => esc_html__( 'Block Products By Tag', 'block-widgets-monster' ),
 	);
 }
 
@@ -434,7 +438,7 @@ $woo_blocks_source[] = array(
 			'order'                    => 'asc',
 			'orderBy'                  => 'title',
 			'search'                   => '',
-			'exclude'                  => array(),
+			'exclude'                  => array(), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- block/widget attribute, not a query arg.
 			'inherit'                  => false,
 			'taxQuery'                 => array(),
 			'isProductCollectionBlock' => true,
@@ -508,7 +512,7 @@ $woo_blocks_source[] = array(
 		'</div>',
 	),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block Product Collection', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Product Collection', 'block-widgets-monster' ),
 );
 
 // filter products by price
@@ -523,7 +527,7 @@ $woo_blocks_source[] = array(
 			'attrs'        => array(
 				'showInputFields'  => true,
 				'showFilterButton' => true,
-				'heading'          => esc_html__( 'Filter By Price', 'bwm' ),
+				'heading'          => esc_html__( 'Filter By Price', 'block-widgets-monster' ),
 				'headingLevel'     => 3,
 			),
 			'innerHTML'    =>
@@ -546,7 +550,7 @@ $woo_blocks_source[] = array(
 		'</div>',
 	),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block Filter Products By Price', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Filter Products By Price', 'block-widgets-monster' ),
 );
 $woo_blocks_source[] = array(
 	'blockName'    => 'woocommerce/filter-wrapper',
@@ -559,7 +563,7 @@ $woo_blocks_source[] = array(
 			'attrs'        => array(
 				'showInputFields'  => false,
 				'showFilterButton' => true,
-				'heading'          => esc_html__( 'Filter By Price', 'bwm' ),
+				'heading'          => esc_html__( 'Filter By Price', 'block-widgets-monster' ),
 				'headingLevel'     => 3,
 			),
 			'innerHTML'    =>
@@ -582,7 +586,7 @@ $woo_blocks_source[] = array(
 		'</div>',
 	),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block Filter Products By Price', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Filter Products By Price', 'block-widgets-monster' ),
 );
 
 // filter products by stock
@@ -591,7 +595,7 @@ $woo_blocks_source[] = array(
 	'attrs'        => array(
 		'showCounts'       => true,
 		'showFilterButton' => true,
-		'heading'          => esc_html__( 'Filter By Stock Status', 'bwm' ),
+		'heading'          => esc_html__( 'Filter By Stock Status', 'block-widgets-monster' ),
 		'headingLevel'     => 3,
 	),
 	'innerHTML'    =>
@@ -600,7 +604,7 @@ $woo_blocks_source[] = array(
 		'<div class="wp-block-woocommerce-stock-filter"></div>',
 	),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block Filter Products By Stock', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Filter Products By Stock', 'block-widgets-monster' ),
 );
 
 // product filters
@@ -630,11 +634,11 @@ $woo_blocks_source[] = array(
 					'attrs'        => array(),
 					'innerHTML'    =>
 						'<div class="wp-block-button">
-							<a class="wp-block-button__link">' . esc_html__( 'Clear', 'bwm' ) . '</a>
+							<a class="wp-block-button__link">' . esc_html__( 'Clear', 'block-widgets-monster' ) . '</a>
 						</div>',
 					'innerContent' => array(
 						'<div class="wp-block-button">
-							<a class="wp-block-button__link">' . esc_html__( 'Clear', 'bwm' ) . '</a>
+							<a class="wp-block-button__link">' . esc_html__( 'Clear', 'block-widgets-monster' ) . '</a>
 						</div>',
 					),
 				),
@@ -735,7 +739,7 @@ $woo_blocks_source[] = array(
 		'</div>',
 	),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block Product Filters', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Product Filters', 'block-widgets-monster' ),
 );
 
 // mini cart
@@ -745,7 +749,7 @@ $woo_blocks_source[] = array(
 	'innerHTML'    => '',
 	'innerContent' => array(),
 	'className'    => '',
-	'blockHeading' => esc_html__( 'Block Mini Cart', 'bwm' ),
+	'blockHeading' => esc_html__( 'Block Mini Cart', 'block-widgets-monster' ),
 );
 
 $woo_blocks = $this->group_blocks( $woo_blocks_source, $group );

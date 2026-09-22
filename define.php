@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! defined( 'BWM_FILE' ) ) {
 	define( 'BWM_FILE', dirname( __FILE__ ) . '/block-widgets-monster.php' );
 }
@@ -14,10 +18,6 @@ if ( ! defined( 'BWM_VERSION' ) ) {
 
 if ( ! defined( 'BWM_ABS_PATH' ) ) {
 	define( 'BWM_ABS_PATH', dirname( __FILE__ ) );
-}
-
-if ( ! defined( 'BWM_REL_PATH' ) ) {
-	define( 'BWM_REL_PATH', dirname( plugin_basename( __FILE__ ) ) );
 }
 
 if ( ! defined( 'BWM_URL_PATH' ) ) {
