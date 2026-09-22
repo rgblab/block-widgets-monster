@@ -1,8 +1,7 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+// exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 $woo_blocks_source = array();
 

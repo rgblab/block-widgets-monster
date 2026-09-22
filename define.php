@@ -1,8 +1,7 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+// exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! defined( 'BWM_FILE' ) ) {
 	define( 'BWM_FILE', dirname( __FILE__ ) . '/block-widgets-monster.php' );

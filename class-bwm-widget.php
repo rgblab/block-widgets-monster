@@ -1,8 +1,7 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+// exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! function_exists( 'bwm_register_widget' ) ) {
 	/**

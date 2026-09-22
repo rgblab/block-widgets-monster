@@ -15,9 +15,8 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+// exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Block_Widgets_Monster' ) ) {
 	/**
