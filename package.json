@@ -1,6 +1,6 @@
 {
 	"name": "block-widgets-monster",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "Build tooling for the Block Widgets Monster WordPress plugin.",
 	"private": true,
 	"type": "module",

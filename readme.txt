@@ -6,7 +6,7 @@ Tags: widget, theme development, debug, woocommerce widget bundle, monster widge
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -105,6 +105,12 @@ You can use official [theme unit test](https://github.com/WPTT/theme-test-data) 
 1. Block Widgets Monster options
 
 == Changelog ==
+
+= 1.0.7 (23. September 2026) =
+* Changed text domain to match the plugin slug, so wordpress.org translations load correctly
+* Fixed product attribute lookup for WooCommerce block widgets to use the WooCommerce API instead of a direct database query
+* Added escaping for widget form output and blocked direct access to plugin files
+* Code maintenance
 
 = 1.0.6 (22. September 2026) =
 * Added WordPress Playground setup and links
